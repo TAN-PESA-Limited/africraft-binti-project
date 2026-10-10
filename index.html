@@ -46,10 +46,10 @@ section{padding:clamp(64px,9vw,130px) 0;position:relative}
 .btn{position:relative;display:inline-flex;align-items:center;gap:.6em;font-family:'Space Grotesk';font-weight:600;font-size:1rem;padding:15px 30px;border-radius:100px;border:2px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.9,.3,1),box-shadow .25s,background .2s;will-change:transform}
 .btn-primary{background:var(--rust);color:#fff;box-shadow:0 14px 30px -10px rgba(181,70,42,.6)}
 .btn-primary:hover{background:var(--rust-d);transform:translateY(-3px);box-shadow:0 20px 40px -12px rgba(181,70,42,.7)}
-.btn-ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
-.btn-ghost:hover{background:var(--ink);color:var(--cream);transform:translateY(-3px)}
-.btn-gold{background:var(--gold);color:var(--ink)}
-.btn-gold:hover{background:var(--ochre);transform:translateY(-3px)}
+.btn-ghost{background:transparent;color:#fff;border-color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink);transform:translateY(-3px)}
+.btn-gold{background:var(--gold);color:#fff}
+.btn-gold:hover{background:var(--ochre);color:#fff;transform:translateY(-3px)}
 .btn-lg{padding:18px 38px;font-size:1.08rem}
 
 /* Perlenkette divider */
@@ -441,7 +441,7 @@ footer a:hover{color:var(--gold)}
         <button data-lang="de" class="active">DE</button>
         <button data-lang="sw">SW</button>
       </div>
-      <a href="https://www.gofundme.com/f/empower-tanzanian-girls-with-binti-project" target="_blank" rel="noopener" data-donate class="btn btn-primary magnetic" data-i18n="nav_donate">Donate</a>
+      <a href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" class="btn btn-primary magnetic" data-i18n="nav_donate">Donate</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -458,7 +458,7 @@ footer a:hover{color:var(--gold)}
       <h1 class="reveal in d1" data-i18n="hero_title">Helping girls go to school, <span class="hl">with dignity.</span></h1>
       <p class="lead reveal in d2" data-i18n="hero_lead">Many girls from low-income families in Tanzania miss school every month simply because they lack menstrual hygiene products. The Binti Project changes that, with a reusable Binti kit (hygiene kit) and education that lets girls manage their period safely, confidently and sustainably.</p>
       <div class="hero-cta reveal in d2">
-        <a href="https://www.gofundme.com/f/empower-tanzanian-girls-with-binti-project" target="_blank" rel="noopener" data-donate class="btn btn-primary btn-lg magnetic" data-i18n="hero_cta1">Donate now</a>
+        <a href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" class="btn btn-primary btn-lg magnetic" data-i18n="hero_cta1">Donate now</a>
         <a href="#kit" class="btn btn-ghost btn-lg" data-i18n="hero_cta2">See what's in a kit</a>
       </div>
       <div class="hero-chips reveal in d3">
@@ -584,7 +584,7 @@ footer a:hover{color:var(--gold)}
 
     <div class="kit-cta reveal">
       <p class="lead" style="margin:0 auto 22px" data-i18n="kit_cta_lead">One kit, sewn by local seamstresses, is usable for two years and keeps a girl learning.</p>
-      <a href="https://www.gofundme.com/f/empower-tanzanian-girls-with-binti-project" target="_blank" rel="noopener" data-donate class="btn btn-primary btn-lg magnetic" data-i18n="kit_cta_btn">Fund a Binti Kit</a>
+      <a href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" class="btn btn-primary btn-lg magnetic" data-i18n="kit_cta_btn">Fund a Binti Kit</a>
     </div>
   </div>
 </section>
@@ -620,6 +620,16 @@ footer a:hover{color:var(--gold)}
       <img src="images/impact.jpg" alt="Ane, Binti-Koordinatorin vor Ort, übergibt Binti-Sets an Mädchen der Mvomero Secondary School">
       <figcaption data-i18n="imp_photocap">Ane, our Binti coordinator on the ground, hands Binti Kits to 256 girls at Mvomero Secondary School.</figcaption>
     </figure>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px">
+      <figure class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -14px rgba(66,32,12,.28)">
+        <div style="height:320px;overflow:hidden"><img src="images/anneth-1.jpg" alt="Anneth presenting Binti kits to students" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <figcaption style="padding:10px 14px;background:#fff;font-size:.88rem;color:#6d5642;font-style:italic">Anneth</figcaption>
+      </figure>
+      <figure class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 10px 30px -14px rgba(66,32,12,.28)">
+        <div style="height:320px;overflow:hidden"><img src="images/anneth-2.jpg" alt="Anneth handing a Binti kit to a student" style="width:100%;height:100%;object-fit:cover;display:block"></div>
+        <figcaption style="padding:10px 14px;background:#fff;font-size:.88rem;color:#6d5642;font-style:italic">Anneth</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -749,8 +759,8 @@ footer a:hover{color:var(--gold)}
       <div class="donate-card">
         <h3 class="dc-t" data-i18n="dc_t">Every donation goes straight into Binti Kits</h3>
         <p class="dc-p" data-i18n="dc_p">€15 funds one complete kit for one girl, usable for two years.</p>
-        <a href="https://www.gofundme.com/f/empower-tanzanian-girls-with-binti-project" target="_blank" rel="noopener" data-donate class="btn btn-primary btn-lg magnetic" data-i18n="don_btn">Donate via GoFundMe</a>
-        <p class="donate-alt" data-i18n="don_alt"><b>PayPal:</b> <a class="pp-link" href="#" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Bank transfer:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Belgium</p>
+        <a href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" class="btn btn-primary btn-lg magnetic" data-i18n="don_btn">Donate via PayPal</a>
+        <p class="donate-alt" data-i18n="don_alt"><b>PayPal:</b> <a class="pp-link" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Bank transfer:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Belgium</p>
       </div>
     </div>
   </div>
@@ -780,7 +790,7 @@ footer a:hover{color:var(--gold)}
       <div class="contact-card reveal">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h4 data-i18n="con_addr">Address</h4>
-        <p>Plot #21, Guinea Rd, Oysterbay,<br>Dar es Salaam, Tanzania<br><br>Lindauer Str. 12,<br>10781 Berlin, Germany</p>
+        <p>Plot #21, Guinea Rd, Oysterbay,<br>Dar es Salaam, Tanzania<br><br>Zimmerstrasse M, 10969 Berlin, Germany</p>
       </div>
       <div class="contact-card reveal d1">
         <div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.4-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg></div>
@@ -891,7 +901,7 @@ const I18N = {
     don_t1:"100% to charitable goals",don_t2:"Reusable & sustainable",don_t3:"Made by local artisans",
     don_btn:"Donate via GoFundMe",
     dc_t:"Every donation goes straight into Binti Kits",dc_p:"€15 funds one complete kit for one girl, usable for two years.",
-    don_alt:'<b>PayPal:</b> <a class="pp-link" href="#" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Bank transfer:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Belgium',
+    don_alt:'<b>PayPal:</b> <a class="pp-link" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Bank transfer:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Belgium',
     faq_eyebrow:"Good to know",faq_title:"Frequently asked questions",
     con_eyebrow:"Get in touch",con_title:"Contact AfriCraft",con_addr:"Address",con_phone:"Phone",con_email:"Email",
     foot_about:"Menstrual health and education for schoolgirls in Tanzania, reusable, sustainable, made by local artisans.",
@@ -942,7 +952,7 @@ const I18N = {
     don_t1:"100 % für gemeinnützige Ziele",don_t2:"Wiederverwendbar & nachhaltig",don_t3:"Von lokalen Handwerker:innen",
     don_btn:"Über GoFundMe spenden",
     dc_t:"Jede Spende geht direkt in Binti-Sets",dc_p:"15 € finanzieren ein komplettes Set für ein Mädchen, zwei Jahre verwendbar.",
-    don_alt:'<b>PayPal:</b> <a class="pp-link" href="#" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Bankverbindung:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Belgien',
+    don_alt:'<b>PayPal:</b> <a class="pp-link" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Bankverbindung:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Belgien',
     faq_eyebrow:"Gut zu wissen",faq_title:"Häufig gestellte Fragen",
     con_eyebrow:"Kontakt aufnehmen",con_title:"AfriCraft kontaktieren",con_addr:"Adresse",con_phone:"Telefon",con_email:"E-Mail",
     foot_about:"Menstruationshygiene und Bildung für Schulmädchen in Tansania, wiederverwendbar, nachhaltig, von lokalen Handwerker:innen.",
@@ -993,7 +1003,7 @@ const I18N = {
     don_t1:"100% kwa malengo ya kijamii",don_t2:"Ya kutumika tena & endelevu",don_t3:"Imetengenezwa na mafundi wa ndani",
     don_btn:"Changia kupitia GoFundMe",
     dc_t:"Kila mchango huenda moja kwa moja kwenye vifurushi vya Binti",dc_p:"€15 hufadhili kifurushi kimoja kamili kwa msichana mmoja, hutumika kwa miaka miwili.",
-    don_alt:'<b>PayPal:</b> <a class="pp-link" href="#" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Uhamisho wa benki:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Ubelgiji',
+    don_alt:'<b>PayPal:</b> <a class="pp-link" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener">verein@africraft.de</a><br><b>Uhamisho wa benki:</b> AfriCraft e.V.<br>IBAN BE10 9054 7533 8504 · BIC TRWIBEB1XXX<br>WISE Bank, Ubelgiji',
     faq_eyebrow:"Vizuri kujua",faq_title:"Maswali yanayoulizwa mara kwa mara",
     con_eyebrow:"Wasiliana nasi",con_title:"Wasiliana na AfriCraft",con_addr:"Anwani",con_phone:"Simu",con_email:"Barua pepe",
     foot_about:"Heshima ya hedhi na elimu kwa wasichana wa shule nchini Tanzania, ya kutumika tena, endelevu, iliyotengenezwa na mafundi wa ndani.",
@@ -1050,7 +1060,7 @@ const FAQ = {
     {q:"What is inside a Binti Kit?",a:"Each kit contains five reusable pads, a large drawstring bag, a small clutch, a large and a small waterproof pouch, antibacterial soap, two pairs of underwear, and an illustrated guide with a menstrual calendar."},
     {q:"How long does a kit last?",a:"The reusable pads can be washed and used again for up to two years, replacing hundreds of disposable pads and cutting both cost and waste."},
     {q:"Where does my donation go?",a:"As a non-profit, AfriCraft commits every donation solely to its charitable goals: producing and distributing kits, running education sessions, and supporting the communities and artisans behind the project."},
-    {q:"How can I donate?",a:"The easiest way is through our GoFundMe campaign. For bank transfers, partnerships or larger gifts, email social.projects@africraft.de and we'll gladly help."},
+    {q:"How can I donate?",a:"The easiest way is via PayPal. For bank transfers, partnerships or larger gifts, email social.projects@africraft.de and we'll gladly help."},
     {q:"Is my donation tax-deductible?",a:"Please contact us at social.projects@africraft.de before donating if you need a donation receipt, we'll let you know what is possible for your country."},
     {q:"Who makes the kits?",a:"The kits are handmade by trained local seamstresses in Tanzanian villages, supported by AfriCraft NGO, connecting menstrual dignity with fair, sustainable local work."},
     {q:"Can my school, company or NGO partner with you?",a:"Yes. AfriCraft partners with NGOs, schools and companies on social projects. Reach out at social.projects@africraft.de to explore working together."}
@@ -1060,7 +1070,7 @@ const FAQ = {
     {q:"Was ist in einem Binti-Set enthalten?",a:"Jedes Set enthält fünf wiederverwendbare Binden, eine große Stofftasche mit Zugband, eine kleine Clutch, eine große und eine kleine wasserfeste Tasche, antibakterielle Seife, zwei Höschen sowie eine bebilderte Anleitung mit Menstruationskalender."},
     {q:"Wie lange hält ein Set?",a:"Die wiederverwendbaren Binden können gewaschen und zwei Jahre lang erneut verwendet werden, das ersetzt Hunderte Einwegbinden und spart Kosten sowie Müll."},
     {q:"Wohin geht meine Spende?",a:"Als gemeinnützige Organisation setzt AfriCraft jede Spende ausschließlich für die satzungsgemäßen Ziele ein: Herstellung und Verteilung der Sets, Aufklärungsveranstaltungen und Unterstützung der Gemeinschaften und Handwerker:innen hinter dem Projekt."},
-    {q:"Wie kann ich spenden?",a:"Am einfachsten über unsere GoFundMe-Kampagne. Für Überweisungen, Partnerschaften oder größere Zuwendungen schreib an social.projects@africraft.de, wir helfen gern."},
+    {q:"Wie kann ich spenden?",a:"Am einfachsten über PayPal. Für Überweisungen, Partnerschaften oder größere Zuwendungen schreib an social.projects@africraft.de, wir helfen gern."},
     {q:"Ist meine Spende steuerlich absetzbar?",a:"Wenn du eine Spendenquittung benötigst, kontaktiere uns bitte vor der Spende unter social.projects@africraft.de, wir sagen dir, was für dein Land möglich ist."},
     {q:"Wer stellt die Sets her?",a:"Die Sets werden von ausgebildeten Näherinnen in tansanischen Dörfern handgefertigt und vom AfriCraft NGO getragen, faire, nachhaltige lokale Arbeit statt Massenware."},
     {q:"Können meine Schule, Firma oder NGO Partner werden?",a:"Ja. AfriCraft kooperiert mit NGOs, Schulen und Unternehmen bei sozialen Projekten. Melde dich unter social.projects@africraft.de, um eine Zusammenarbeit zu besprechen."}
@@ -1070,7 +1080,7 @@ const FAQ = {
     {q:"Ndani ya Kifurushi cha Binti kuna nini?",a:"Kila kifurushi kina taulo tano za kutumika tena, mfuko mkubwa wa kamba, mfuko mdogo (clutch), mfuko mkubwa na mdogo usiopitisha maji, sabuni ya kuua bakteria, chupi mbili, na mwongozo wenye picha pamoja na kalenda ya hedhi."},
     {q:"Kifurushi hudumu kwa muda gani?",a:"Taulo za kutumika tena zinaweza kuoshwa na kutumika tena hadi miaka miwili, zikichukua nafasi ya mamia ya taulo za matumizi moja na kupunguza gharama na taka."},
     {q:"Mchango wangu huenda wapi?",a:"Kama shirika lisilo la faida, AfriCraft hutumia kila mchango kwa malengo yake ya kijamii pekee: kutengeneza na kugawa vifurushi, kuendesha vipindi vya elimu, na kusaidia jamii na mafundi walio nyuma ya mradi."},
-    {q:"Naweza kuchangiaje?",a:"Njia rahisi zaidi ni kupitia kampeni yetu ya GoFundMe. Kwa uhamisho wa benki, ushirikiano au michango mikubwa, tuandikie social.projects@africraft.de nasi tutafurahi kusaidia."},
+    {q:"Naweza kuchangiaje?",a:"Njia rahisi zaidi ni kupitia PayPal. Kwa uhamisho wa benki, ushirikiano au michango mikubwa, tuandikie social.projects@africraft.de nasi tutafurahi kusaidia."},
     {q:"Je, mchango wangu unapunguzwa kodi?",a:"Kama unahitaji risiti ya mchango, tafadhali wasiliana nasi kabla ya kuchangia kupitia social.projects@africraft.de, tutakujulisha kinachowezekana kwa nchi yako."},
     {q:"Nani hutengeneza vifurushi?",a:"Vifurushi hushonwa kwa mikono na washonaji wa ndani waliofunzwa katika vijiji vya Tanzania, wakisaidiwa na AfriCraft NGO, kazi ya ndani ya haki na endelevu."},
     {q:"Je, shule, kampuni au NGO yangu inaweza kushirikiana nanyi?",a:"Ndiyo. AfriCraft hushirikiana na NGOs, shule na kampuni katika miradi ya kijamii. Wasiliana nasi kupitia social.projects@africraft.de ili kuzungumzia kushirikiana."}
@@ -1080,17 +1090,17 @@ const FAQ = {
 /* Legal content */
 const LEGAL = {
   en:{
-    imprint:`<h2>Imprint</h2><p><strong>AfriCraft NGO</strong>, registered as African Handcraft Organization, NGO No. 00NGO/1307. A non-profit running social projects across Tanzania.</p><h3>Tanzania office</h3><p>Plot #21, Guinea Rd, Oysterbay<br>P.O. Box 105582, Dar es Salaam, Tanzania<br>Phone: +255 782 394 302</p><h3>Germany office</h3><p>Lindauer Str. 12, 10781 Berlin, Germany<br>Phone: +49 30 23633233</p><h3>Contact</h3><p>Social projects &amp; donations: social.projects@africraft.de<br>General: info@africraft.co.tz</p><p>Responsible for the Binti Project's social work: AfriCraft NGO, Social Projects.</p>`,
+    imprint:`<h2>Imprint</h2><p><strong>AfriCraft NGO</strong>, registered as African Handcraft Organization, NGO No. 00NGO/1307. A non-profit running social projects across Tanzania.</p><h3>Tanzania office</h3><p>Plot #21, Guinea Rd, Oysterbay<br>P.O. Box 105582, Dar es Salaam, Tanzania<br>Phone: +255 782 394 302</p><h3>Germany office</h3><p>Zimmerstrasse M, 10969 Berlin, Germany<br>Phone: +49 30 23633233</p><h3>Contact</h3><p>Social projects &amp; donations: social.projects@africraft.de<br>General: info@africraft.co.tz</p><p>Responsible for the Binti Project's social work: AfriCraft NGO, Social Projects.</p>`,
     privacy:`<h2>Privacy Policy</h2><p>AfriCraft NGO is a registered Tanzanian non-profit (No. 00NGO/1307) running social projects such as the Binti Project. This policy explains how we handle your data.</p><h3>Data we collect</h3><p>When you use a contact or comment form we may collect the information you enter, your IP address and your browser type, in order to help detect spam.</p><h3>Cookies</h3><p>Comment-related cookies are kept for up to one year, login cookies for two days (or two weeks with “Remember Me”), and preference cookies for one year.</p><h3>Data retention</h3><p>Comments and related information may be stored to help with automated moderation. Account information is kept until you request its deletion.</p><h3>Your rights</h3><p>You may request a copy of the personal data we hold about you, or ask us to delete it, except for information we must keep for administrative, legal or security reasons.</p><h3>Embedded and third-party content</h3><p>Pages may include embedded content (for example the GoFundMe donation widget or links). These providers may collect data and track your interaction according to their own policies.</p><h3>Image uploads</h3><p>Please avoid uploading images that contain embedded location data (EXIF GPS), as others could extract it.</p><h3>Contact</h3><p>Questions about your data: marketing@africraft.co.tz · +255 782 394 302 · Plot #21, Guinea Rd, Oysterbay, Dar Es Salaam.</p>`,
     terms:`<h2>Terms & Conditions</h2><p>The following return and refund terms apply to purchases from AfriCraft. Donations to the Binti Project are voluntary gifts and are not purchases; they are generally non-refundable except in the case of a clear processing error.</p><h3>Returns</h3><p>You may return a purchased item within 30 days of purchase. Items must be unused, in original condition and packaging, with proof of purchase, and sent to AfriCraft directly.</p><h3>Non-returnable items</h3><ul><li>Perishables (food, flowers)</li><li>Intimate or sanitary goods and certain health products</li><li>Publications, opened media and digital/software downloads</li><li>Hazardous materials and gift cards</li></ul><h3>Refunds</h3><p>Once a return is received and inspected, we notify you by email. Approved refunds are credited to your original payment method within several business days. Partial refunds may apply to worn, opened or damaged items, or returns outside the timeframe.</p><h3>Exchanges</h3><p>We replace items only if they are defective or damaged.</p><h3>Shipping</h3><p>Return shipping costs are the customer's responsibility and may be deducted from the refund. Tracked shipping is recommended for valuable items.</p><h3>Contact</h3><p>marketing@africraft.co.tz · +255 782 394 302</p>`
   },
   de:{
-    imprint:`<h2>Impressum</h2><p><strong>AfriCraft NGO</strong>, registriert als African Handcraft Organization, NGO-Nr. 00NGO/1307. Eine gemeinnützige Organisation mit Sozialprojekten in ganz Tansania.</p><h3>Büro Tansania</h3><p>Plot #21, Guinea Rd, Oysterbay<br>P.O. Box 105582, Dar es Salaam, Tansania<br>Telefon: +255 782 394 302</p><h3>Büro Deutschland</h3><p>Lindauer Str. 12, 10781 Berlin<br>Telefon: +49 30 23633233</p><h3>Kontakt</h3><p>Sozialprojekte &amp; Spenden: social.projects@africraft.de<br>Allgemein: info@africraft.co.tz</p><p>Verantwortlich für die soziale Arbeit des Binti-Projekts: AfriCraft NGO, Social Projects.</p>`,
+    imprint:`<h2>Impressum</h2><p><strong>AfriCraft NGO</strong>, registriert als African Handcraft Organization, NGO-Nr. 00NGO/1307. Eine gemeinnützige Organisation mit Sozialprojekten in ganz Tansania.</p><h3>Büro Tansania</h3><p>Plot #21, Guinea Rd, Oysterbay<br>P.O. Box 105582, Dar es Salaam, Tansania<br>Telefon: +255 782 394 302</p><h3>Büro Deutschland</h3><p>Zimmerstrasse M, 10969 Berlin<br>Telefon: +49 30 23633233</p><h3>Kontakt</h3><p>Sozialprojekte &amp; Spenden: social.projects@africraft.de<br>Allgemein: info@africraft.co.tz</p><p>Verantwortlich für die soziale Arbeit des Binti-Projekts: AfriCraft NGO, Social Projects.</p>`,
     privacy:`<h2>Datenschutzerklärung</h2><p>AfriCraft NGO ist eine gemeinnützige tansanische Organisation (Nr. 00NGO/1307) mit Sozialprojekten wie dem Binti-Projekt. Diese Erklärung beschreibt den Umgang mit deinen Daten.</p><h3>Erhobene Daten</h3><p>Bei Nutzung eines Kontakt- oder Kommentarformulars erfassen wir ggf. die eingegebenen Angaben, deine IP-Adresse und deinen Browsertyp, um Spam zu erkennen.</p><h3>Cookies</h3><p>Kommentar-Cookies werden bis zu ein Jahr gespeichert, Login-Cookies zwei Tage (bzw. zwei Wochen mit „Angemeldet bleiben“), Präferenz-Cookies ein Jahr.</p><h3>Speicherdauer</h3><p>Kommentare und zugehörige Informationen können zur automatischen Moderation gespeichert werden. Kontodaten bleiben gespeichert, bis du ihre Löschung verlangst.</p><h3>Deine Rechte</h3><p>Du kannst eine Kopie der über dich gespeicherten Daten anfordern oder deren Löschung verlangen, ausgenommen Daten, die wir aus administrativen, rechtlichen oder Sicherheitsgründen aufbewahren müssen.</p><h3>Eingebettete Inhalte Dritter</h3><p>Seiten können eingebettete Inhalte enthalten (z. B. das GoFundMe-Spenden-Widget oder Links). Diese Anbieter können nach ihren eigenen Richtlinien Daten erheben und dein Verhalten verfolgen.</p><h3>Bild-Uploads</h3><p>Bitte lade keine Bilder mit eingebetteten Standortdaten (EXIF-GPS) hoch, da andere diese auslesen könnten.</p><h3>Kontakt</h3><p>Fragen zu deinen Daten: marketing@africraft.co.tz · +255 782 394 302 · Plot #21, Guinea Rd, Oysterbay, Dar Es Salaam.</p>`,
     terms:`<h2>AGB</h2><p>Die folgenden Rückgabe- und Erstattungsbedingungen gelten für Käufe bei AfriCraft. Spenden an das Binti-Projekt sind freiwillige Zuwendungen und keine Käufe; sie sind grundsätzlich nicht erstattungsfähig, außer bei einem eindeutigen Abwicklungsfehler.</p><h3>Rückgabe</h3><p>Gekaufte Artikel können innerhalb von 30 Tagen zurückgegeben werden. Sie müssen unbenutzt, im Originalzustand und in der Originalverpackung sein, mit Kaufnachweis, und direkt an AfriCraft gesendet werden.</p><h3>Nicht rückgabefähige Artikel</h3><ul><li>Verderbliche Waren (Lebensmittel, Blumen)</li><li>Intim- bzw. Hygieneartikel und bestimmte Gesundheitsprodukte</li><li>Publikationen, geöffnete Medien und digitale/Software-Downloads</li><li>Gefahrgut und Geschenkkarten</li></ul><h3>Erstattungen</h3><p>Nach Eingang und Prüfung der Rückgabe informieren wir dich per E-Mail. Genehmigte Erstattungen werden innerhalb einiger Werktage auf dein ursprüngliches Zahlungsmittel gutgeschrieben. Teilerstattungen können bei getragenen, geöffneten oder beschädigten Artikeln oder Rückgaben außerhalb der Frist gelten.</p><h3>Umtausch</h3><p>Wir ersetzen Artikel nur, wenn sie defekt oder beschädigt sind.</p><h3>Versand</h3><p>Die Kosten der Rücksendung trägt der Kunde und können von der Erstattung abgezogen werden. Für wertvolle Artikel wird ein verfolgbarer Versand empfohlen.</p><h3>Kontakt</h3><p>marketing@africraft.co.tz · +255 782 394 302</p>`
   },
   sw:{
-    imprint:`<h2>Anwani rasmi</h2><p><strong>AfriCraft NGO</strong>, iliyosajiliwa kama African Handcraft Organization, NGO Na. 00NGO/1307. Shirika lisilo la faida lenye miradi ya kijamii kote Tanzania.</p><h3>Ofisi ya Tanzania</h3><p>Plot #21, Guinea Rd, Oysterbay<br>S.L.P. 105582, Dar es Salaam, Tanzania<br>Simu: +255 782 394 302</p><h3>Ofisi ya Ujerumani</h3><p>Lindauer Str. 12, 10781 Berlin<br>Simu: +49 30 23633233</p><h3>Mawasiliano</h3><p>Miradi ya kijamii &amp; michango: social.projects@africraft.de<br>Kwa ujumla: info@africraft.co.tz</p><p>Anayehusika na kazi ya kijamii ya Mradi wa Binti: AfriCraft NGO, Social Projects.</p>`,
+    imprint:`<h2>Anwani rasmi</h2><p><strong>AfriCraft NGO</strong>, iliyosajiliwa kama African Handcraft Organization, NGO Na. 00NGO/1307. Shirika lisilo la faida lenye miradi ya kijamii kote Tanzania.</p><h3>Ofisi ya Tanzania</h3><p>Plot #21, Guinea Rd, Oysterbay<br>S.L.P. 105582, Dar es Salaam, Tanzania<br>Simu: +255 782 394 302</p><h3>Ofisi ya Ujerumani</h3><p>Zimmerstrasse M, 10969 Berlin<br>Simu: +49 30 23633233</p><h3>Mawasiliano</h3><p>Miradi ya kijamii &amp; michango: social.projects@africraft.de<br>Kwa ujumla: info@africraft.co.tz</p><p>Anayehusika na kazi ya kijamii ya Mradi wa Binti: AfriCraft NGO, Social Projects.</p>`,
     privacy:`<h2>Sera ya Faragha</h2><p>AfriCraft NGO ni shirika lisilo la faida la Tanzania (Na. 00NGO/1307) lenye miradi ya kijamii kama Mradi wa Binti. Sera hii inaeleza jinsi tunavyoshughulikia data yako.</p><h3>Data tunayokusanya</h3><p>Unapotumia fomu ya mawasiliano au maoni, tunaweza kukusanya taarifa unazoingiza, anwani yako ya IP na aina ya kivinjari chako, ili kusaidia kugundua barua taka.</p><h3>Vidakuzi (Cookies)</h3><p>Vidakuzi vya maoni huhifadhiwa hadi mwaka mmoja, vya kuingia siku mbili (au wiki mbili kwa “Nikumbuke”), na vya mapendeleo mwaka mmoja.</p><h3>Uhifadhi wa data</h3><p>Maoni na taarifa zinazohusiana zinaweza kuhifadhiwa kusaidia usimamizi otomatiki. Taarifa za akaunti huhifadhiwa hadi utakapoomba zifutwe.</p><h3>Haki zako</h3><p>Unaweza kuomba nakala ya data binafsi tuliyonayo kukuhusu, au kuomba tuifute, isipokuwa taarifa tunazopaswa kuhifadhi kwa sababu za kiutawala, kisheria au usalama.</p><h3>Maudhui yaliyopachikwa ya wahusika wengine</h3><p>Kurasa zinaweza kuwa na maudhui yaliyopachikwa (kwa mfano kifaa cha michango cha GoFundMe au viungo). Watoa huduma hawa wanaweza kukusanya data na kufuatilia matumizi yako kulingana na sera zao.</p><h3>Kupakia picha</h3><p>Tafadhali epuka kupakia picha zenye data ya eneo (EXIF GPS), kwani wengine wanaweza kuitoa.</p><h3>Mawasiliano</h3><p>Maswali kuhusu data yako: marketing@africraft.co.tz · +255 782 394 302 · Plot #21, Guinea Rd, Oysterbay, Dar Es Salaam.</p>`,
     terms:`<h2>Vigezo na Masharti</h2><p>Vigezo vifuatavyo vya kurejesha na kurudisha fedha vinahusu ununuzi kutoka AfriCraft. Michango kwa Mradi wa Binti ni zawadi za hiari na si ununuzi; kwa kawaida hairejeshwi isipokuwa kunapotokea hitilafu ya wazi ya uchakataji.</p><h3>Kurejesha bidhaa</h3><p>Unaweza kurejesha bidhaa iliyonunuliwa ndani ya siku 30. Bidhaa lazima ziwe hazijatumika, katika hali na kifungashio cha awali, zikiwa na uthibitisho wa ununuzi, na zitumwe moja kwa moja kwa AfriCraft.</p><h3>Bidhaa zisizorejeshwa</h3><ul><li>Zinazoharibika (chakula, maua)</li><li>Bidhaa za faragha/usafi na baadhi ya bidhaa za afya</li><li>Machapisho, vyombo vya habari vilivyofunguliwa na programu/upakuaji wa kidijitali</li><li>Vitu hatari na kadi za zawadi</li></ul><h3>Kurudisha fedha</h3><p>Baada ya kupokea na kukagua bidhaa iliyorejeshwa, tutakujulisha kwa barua pepe. Marejesho yaliyoidhinishwa hulipwa kwenye njia yako ya awali ya malipo ndani ya siku chache za kazi. Marejesho ya sehemu yanaweza kutumika kwa bidhaa zilizotumika, zilizofunguliwa au zilizoharibika, au marejesho nje ya muda.</p><h3>Kubadilishana</h3><p>Tunabadilisha bidhaa tu kama zina kasoro au zimeharibika.</p><h3>Usafirishaji</h3><p>Gharama za kurejesha ni jukumu la mteja na zinaweza kupunguzwa kutoka kwenye marejesho. Usafirishaji unaofuatiliwa unapendekezwa kwa bidhaa za thamani.</p><h3>Mawasiliano</h3><p>marketing@africraft.co.tz · +255 782 394 302</p>`
   }
@@ -1251,7 +1261,7 @@ function paypalURL(tier){
 function donPayHTML(){
   const d=DON[currentLang]||DON.de, tier=TIERS[donSel];
   let h='<div class="don-pay">';
-  h+='<a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="'+PAY.gofundme+'">'+d.gfm+' · '+tier.eur+' €</a>';
+  h+='<a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
   if(PAY.paypal){
     h+='<a class="btn btn-paypal btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
   }
