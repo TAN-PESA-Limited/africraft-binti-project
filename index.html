@@ -96,8 +96,8 @@ header.scrolled{background:rgba(251,243,230,.9);backdrop-filter:blur(14px);box-s
 .hero-chip .t{font-size:.82rem;color:var(--ink-soft);font-weight:500;max-width:15ch;line-height:1.25}
 .hero-chip+.hero-chip{padding-left:20px;border-left:1px solid var(--line)}
 /* hero visual */
-.hero-art{position:relative;aspect-ratio:4/4.6}
-.blob{position:absolute;inset:0;background:linear-gradient(160deg,var(--indigo),var(--indigo-d));box-shadow:var(--shadow);overflow:hidden;
+.hero-art{position:relative}
+.blob{position:relative;background:linear-gradient(160deg,var(--indigo),var(--indigo-d));box-shadow:var(--shadow);overflow:hidden;
   border-radius:56% 44% 58% 42% / 48% 52% 48% 52%;animation:morph 14s ease-in-out infinite}
 @keyframes morph{0%,100%{border-radius:56% 44% 58% 42% / 48% 52% 48% 52%}50%{border-radius:44% 56% 42% 58% / 56% 44% 56% 44%}}
 .blob-pattern{position:absolute;inset:0;opacity:.14;background-image:
@@ -194,8 +194,8 @@ header.scrolled{background:rgba(251,243,230,.9);backdrop-filter:blur(14px);box-s
 .amb-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:44px}
 .amb-card{background:var(--white);border:1px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.3s}
 .amb-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.amb-photo{aspect-ratio:4/3;position:relative;background:linear-gradient(140deg,var(--indigo),var(--indigo-d))}
-.amb-photo img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.amb-photo{position:relative;background:linear-gradient(140deg,var(--indigo),var(--indigo-d))}
+.amb-photo img{width:100%;height:auto;display:block;object-fit:initial}
 .amb-flag{position:absolute;top:14px;left:14px;background:rgba(251,243,230,.92);border-radius:100px;padding:5px 14px;font-weight:600;font-size:.82rem;color:var(--ink)}
 .amb-ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.85);font-family:'Fraunces';font-style:italic;text-align:center;padding:20px}
 .amb-body{padding:24px 26px}
@@ -225,7 +225,7 @@ header.scrolled{background:rgba(251,243,230,.9);backdrop-filter:blur(14px);box-s
 .amb-mini:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--ochre)}
 .amb-mini .amb-flag{position:static;background:var(--sand);border:1px solid var(--line);border-radius:100px;padding:4px 13px;font-weight:600;font-size:.8rem;color:var(--indigo)}
 .amb-top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
-.amb-thumb{width:60px;height:60px;border-radius:15px;object-fit:cover;flex:none;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.amb-thumb{width:60px;height:auto;border-radius:15px;object-fit:contain;flex:none;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
 .amb-mini h3{margin:0 0 4px}
 .amb-mini p{font-size:.95rem;margin-top:4px}
 .bracelet-note{display:flex;gap:18px;align-items:flex-start;max-width:820px;margin:26px auto 0;background:var(--sand);border:1px solid var(--line);border-radius:20px;padding:22px 26px}
@@ -263,7 +263,7 @@ header.scrolled{background:rgba(251,243,230,.9);backdrop-filter:blur(14px);box-s
 .about{background:var(--sand)}
 .pill-row{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
 .pill{background:var(--white);border:1px solid var(--line);border-radius:100px;padding:9px 18px;font-size:.85rem;font-weight:600;color:var(--indigo)}
-.about-art{aspect-ratio:1/1;border-radius:30px;background:linear-gradient(160deg,var(--ochre),var(--rust));box-shadow:var(--shadow);position:relative;overflow:hidden;display:grid;place-items:center}
+.about-art{border-radius:30px;background:linear-gradient(160deg,var(--ochre),var(--rust));box-shadow:var(--shadow);position:relative;overflow:hidden;display:block}
 .about-art::before{content:"";position:absolute;inset:0;opacity:.16;background-image:radial-gradient(circle at 30% 30%,#2A1B12 2px,transparent 3px);background-size:34px 34px}
 .about-art .ph-label{position:absolute;bottom:20px;left:24px;right:24px;font-size:.74rem;color:rgba(255,255,255,.8);text-align:center;font-family:'Fraunces';font-style:italic}
 
@@ -377,8 +377,8 @@ footer a:hover{color:var(--gold)}
 .modal-box li{margin-bottom:6px;font-size:.96rem;color:var(--ink-soft)}
 .modal-close{position:absolute;top:20px;right:20px;background:var(--white);border:1px solid var(--line);width:40px;height:40px;border-radius:50%;font-size:1.3rem;cursor:pointer;color:var(--ink);line-height:1;z-index:2}
 
-.blob-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.about-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.blob-img{width:100%;height:auto;display:block;position:relative;z-index:0;border-radius:inherit}
+.about-img{width:100%;height:auto;display:block;position:relative;z-index:0;border-radius:inherit}
 .realkit-fig{max-width:600px;margin:36px auto 0;text-align:center}
 .realkit-fig img{width:100%;border-radius:20px;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff}
 .realkit-fig figcaption{font-family:'Fraunces';font-style:italic;font-size:.86rem;color:var(--ink-soft);margin-top:12px}
@@ -659,7 +659,7 @@ footer a:hover{color:var(--gold)}
     <div class="amb-grid">
       <a class="amb-mini reveal" href="de.html">
         <div class="amb-top">
-          <img class="amb-thumb" src="images/ambassador-de.jpg" alt="Verena Kahler" style="object-position:center 22%">
+          <img class="amb-thumb" src="images/ambassador-de.jpg" alt="Verena Kahler" >
           <span class="amb-flag">&#127465;&#127466; <span data-i18n="amb_de_country">Deutschland</span></span>
         </div>
         <h3>Verena Kahler</h3>
@@ -669,7 +669,7 @@ footer a:hover{color:var(--gold)}
       </a>
       <a class="amb-mini reveal d1" href="usa.html">
         <div class="amb-top">
-          <img class="amb-thumb" src="images/ambassador-usa.jpg" alt="Natalie Kuckenburg" style="object-position:center 18%">
+          <img class="amb-thumb" src="images/ambassador-usa.jpg" alt="Natalie Kuckenburg" >
           <span class="amb-flag">&#127482;&#127480; <span data-i18n="amb_usa_country">USA</span></span>
         </div>
         <h3>Natalie Kuckenburg</h3>
