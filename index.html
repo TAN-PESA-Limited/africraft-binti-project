@@ -44,12 +44,12 @@ section{padding:clamp(64px,9vw,130px) 0;position:relative}
 
 /* buttons */
 .btn{position:relative;display:inline-flex;align-items:center;gap:.6em;font-family:'Space Grotesk';font-weight:600;font-size:1rem;padding:15px 30px;border-radius:100px;border:2px solid transparent;cursor:pointer;transition:transform .25s cubic-bezier(.2,.9,.3,1),box-shadow .25s,background .2s;will-change:transform}
-.btn-primary{background:var(--rust);color:#fff;box-shadow:0 14px 30px -10px rgba(181,70,42,.6)}
-.btn-primary:hover{background:var(--rust-d);transform:translateY(-3px);box-shadow:0 20px 40px -12px rgba(181,70,42,.7)}
-.btn-ghost{background:transparent;color:#fff;border-color:#fff}
-.btn-ghost:hover{background:#fff;color:var(--ink);transform:translateY(-3px)}
-.btn-gold{background:var(--gold);color:#fff}
-.btn-gold:hover{background:var(--ochre);color:#fff;transform:translateY(-3px)}
+.btn-primary{background:var(--rust);color:#fff!important;box-shadow:0 14px 30px -10px rgba(181,70,42,.6)}
+.btn-primary:hover{background:var(--rust-d);transform:translateY(-3px);box-shadow:0 20px 40px -12px rgba(181,70,42,.7);color:#fff!important}
+.btn-ghost{background:#fff;color:var(--ink)!important;border-color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:#fff!important;border-color:var(--ink);transform:translateY(-3px)}
+.btn-gold{background:var(--gold);color:#fff!important}
+.btn-gold:hover{background:var(--ochre);color:#fff!important;transform:translateY(-3px)}
 .btn-lg{padding:18px 38px;font-size:1.08rem}
 
 /* Perlenkette divider */
@@ -321,14 +321,15 @@ header.scrolled{background:rgba(251,243,230,.9);backdrop-filter:blur(14px);box-s
 .contact-card a:hover{color:var(--rust)}
 
 /* ---------- Footer ---------- */
-footer{background:var(--ink);color:rgba(255,255,255,.72);padding:60px 0 34px}
+footer{background:var(--ink)!important;color:#F5EDD8!important;padding:60px 0 34px}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:44px;margin-bottom:40px}
-footer .brand{color:#fff}
-footer .brand small{color:rgba(255,255,255,.6)}
-footer h5{color:#fff;font-family:'Space Grotesk';font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;font-weight:600}
+footer .brand{color:#F5EDD8!important}
+footer .brand small{color:#c8b99a!important}
+footer h5{color:#F5EDD8!important;font-family:'Space Grotesk';font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;font-weight:600}
 footer ul{list-style:none;display:grid;gap:11px}
-footer a{color:rgba(255,255,255,.72);font-size:.95rem;transition:.2s}
-footer a:hover{color:var(--gold)}
+footer a{color:#F5EDD8!important;font-size:.95rem;transition:.2s}
+footer a:hover{color:var(--gold)!important}
+footer p,footer span,footer li{color:#F5EDD8!important}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.16);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font-size:.85rem}
 .foot-bottom a{color:rgba(255,255,255,.72)}
 
@@ -650,8 +651,8 @@ footer a:hover{color:var(--gold)}
 <path class="wm-hi wm-hi-dest" d="M581,234L581,235L590,240L590,242L593,244L592,248L592,249L594,250L594,251L593,253L593,254L593,255L594,257L594,259L595,260L593,262L591,263L589,263L588,263L587,263L586,264L583,263L582,263L581,260L580,258L580,257L578,257L576,256L575,256L574,255L573,255L572,251L570,250L570,248L570,246L570,244L571,244L572,243L572,241L573,241L573,240L573,239L572,238L573,238L573,236L572,235L573,234L576,234Z"/>
 <path class="wm-arc" d="M284,123 Q434,53 583,249"/>
 <path class="wm-arc" d="M522,91 Q553,21 583,249"/>
-<g class="wm-marker" data-c="usa" data-href="usa.html" data-x="28.4" data-y="26.2" tabindex="0" role="link"><circle class="wm-pulse" cx="284" cy="123" r="10"/><circle class="wm-dot" cx="284" cy="123" r="6.5"/></g>
-<g class="wm-marker" data-c="de" data-href="de.html" data-x="52.2" data-y="19.4" tabindex="0" role="link"><circle class="wm-pulse" cx="522" cy="91" r="10"/><circle class="wm-dot" cx="522" cy="91" r="6.5"/></g>
+<g class="wm-marker" data-c="usa" data-href="https://africraft.de/projekte/binti/usa/" data-x="28.4" data-y="26.2" tabindex="0" role="link"><circle class="wm-pulse" cx="284" cy="123" r="10"/><circle class="wm-dot" cx="284" cy="123" r="6.5"/></g>
+<g class="wm-marker" data-c="de" data-href="https://africraft.de/projekte/binti/deutschland/" data-x="52.2" data-y="19.4" tabindex="0" role="link"><circle class="wm-pulse" cx="522" cy="91" r="10"/><circle class="wm-dot" cx="522" cy="91" r="6.5"/></g>
 <g class="wm-marker wm-dest" data-c="tz" data-x="58.3" data-y="53.0" tabindex="0" role="img"><circle class="wm-pulse" cx="583" cy="249" r="10"/><circle class="wm-dot" cx="583" cy="249" r="6.5"/></g>
 </svg>
       <div class="wm-tip" id="wmTip" hidden></div>
@@ -667,7 +668,7 @@ footer a:hover{color:var(--gold)}
     </div>
 
     <div class="amb-grid">
-      <a class="amb-mini reveal" href="de.html">
+      <a class="amb-mini reveal" href="https://africraft.de/projekte/binti/deutschland/">
         <div class="amb-top">
           <img class="amb-thumb" src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-de.jpg" alt="Verena Kahler" >
           <span class="amb-flag">&#127465;&#127466; <span data-i18n="amb_de_country">Deutschland</span></span>
@@ -677,7 +678,7 @@ footer a:hover{color:var(--gold)}
         <p data-i18n="amb_de_text">Brings the Binti Project to the German public and raises funds.</p>
         <span class="amb-link" data-i18n="amb_more">Learn more &rarr;</span>
       </a>
-      <a class="amb-mini reveal d1" href="usa.html">
+      <a class="amb-mini reveal d1" href="https://africraft.de/projekte/binti/usa/">
         <div class="amb-top">
           <img class="amb-thumb" src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg" alt="Natalie Kuckenburg" >
           <span class="amb-flag">&#127482;&#127480; <span data-i18n="amb_usa_country">USA</span></span>
@@ -1261,9 +1262,11 @@ function paypalURL(tier){
 function donPayHTML(){
   const d=DON[currentLang]||DON.de, tier=TIERS[donSel];
   let h='<div class="don-pay">';
-  h+='<a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
   if(PAY.paypal){
     h+='<a class="btn btn-paypal btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
+  }
+  if(PAY.gofundme){
+    h+='<a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="'+PAY.gofundme+'">'+d.gfm+'</a>';
   }
   h+='<button type="button" class="btn btn-ghost btn-lg" id="donBankBtn">'+d.bankBtn+'</button>';
   h+='</div>';
