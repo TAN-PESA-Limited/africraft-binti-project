@@ -442,7 +442,7 @@ footer p,footer span,footer li{color:#F5EDD8!important}
         <button data-lang="de" class="active">DE</button>
         <button data-lang="sw">SW</button>
       </div>
-      <a href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" class="btn btn-primary magnetic" data-i18n="nav_donate">Donate</a>
+      <a href="#donate" data-donate class="btn btn-primary magnetic" data-i18n="nav_donate">Donate</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -459,7 +459,7 @@ footer p,footer span,footer li{color:#F5EDD8!important}
       <h1 class="reveal in d1" data-i18n="hero_title">Helping girls go to school, <span class="hl">with dignity.</span></h1>
       <p class="lead reveal in d2" data-i18n="hero_lead">Many girls from low-income families in Tanzania miss school every month simply because they lack menstrual hygiene products. The Binti Project changes that, with a reusable Binti kit (hygiene kit) and education that lets girls manage their period safely, confidently and sustainably.</p>
       <div class="hero-cta reveal in d2">
-        <a href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" class="btn btn-primary btn-lg magnetic" data-i18n="hero_cta1">Donate now</a>
+        <a href="#donate" data-donate class="btn btn-primary btn-lg magnetic" data-i18n="hero_cta1">Donate now</a>
         <a href="#kit" class="btn btn-ghost btn-lg" data-i18n="hero_cta2">See what's in a kit</a>
       </div>
       <div class="hero-chips reveal in d3">
@@ -1246,18 +1246,10 @@ function paypalURL(tier){
 /* Step 1: choose amount + payment method */
 function donPayHTML(){
   const d=DON[currentLang]||DON.de, tier=TIERS[donSel];
-  let h='<div class="don-pay">';
-  if(PAY.paypal){
-    h+='<a class="btn btn-paypal btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
-  }
-  if(PAY.gofundme){
-    h+='<a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="'+PAY.gofundme+'">'+d.gfm+'</a>';
-  }
-  h+='</div>';
-  if(!PAY.paypal) h+='<p class="don-soon" style="margin-top:12px">'+d.soon+'</p>';
-  // Bank details always visible below
+  let h='';
+  // Bank details first
   if(PAY.bank.iban){
-    h+='<div style="display:flex;align-items:center;gap:14px;margin:20px 0 16px;color:var(--ink-soft);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em"><span style="flex:1;height:1px;background:var(--line)"></span><span>'+d.bankT+'</span><span style="flex:1;height:1px;background:var(--line)"></span></div>';
+    h+='<h3 style="margin:0 0 14px;font-family:\'Fraunces\',Georgia,serif;font-size:1.05rem;font-weight:600;color:var(--ink)">'+d.bankT+'</h3>';
     h+='<div class="don-bank">';
     if(PAY.bank.holder) h+='<div class="row"><span>'+d.holder+'</span><code>'+PAY.bank.holder+'</code><button class="don-copy" data-copy="'+PAY.bank.holder+'">'+d.copy+'</button></div>';
     h+='<div class="row"><span>'+d.iban+'</span><code>'+PAY.bank.iban+'</code><button class="don-copy" data-copy="'+PAY.bank.iban.replace(/\s/g,'')+'">'+d.copy+'</button></div>';
@@ -1268,6 +1260,18 @@ function donPayHTML(){
     h+='</div>';
     h+='<p class="dm-lead" style="margin-top:12px;font-size:.84rem;font-style:italic">'+d.bankNote+'</p>';
   }
+  // Divider
+  h+='<div style="display:flex;align-items:center;gap:14px;margin:20px 0 16px;color:var(--ink-soft);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em"><span style="flex:1;height:1px;background:var(--line)"></span><span>oder</span><span style="flex:1;height:1px;background:var(--line)"></span></div>';
+  // PayPal + GoFundMe below
+  h+='<div class="don-pay">';
+  if(PAY.paypal){
+    h+='<a class="btn btn-paypal btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
+  }
+  if(PAY.gofundme){
+    h+='<a class="btn btn-primary btn-lg" target="_blank" rel="noopener" href="'+PAY.gofundme+'">'+d.gfm+'</a>';
+  }
+  h+='</div>';
+  if(!PAY.paypal) h+='<p class="don-soon" style="margin-top:12px">'+d.soon+'</p>';
   return h;
 }
 
