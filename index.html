@@ -353,8 +353,8 @@ footer p,footer span,footer li{color:#F5EDD8!important}
 .don-what p{font-size:.9rem;color:var(--ink-soft);margin:0}
 .don-pay{display:grid;gap:10px}
 .don-pay .btn{width:100%;justify-content:center}
-.btn-paypal{background:#0070BA;color:#fff}
-.btn-paypal:hover{background:#005c99}
+.btn-paypal{background:#0070BA;color:#fff!important}
+.btn-paypal:hover{background:#005c99;color:#fff!important}
 .don-bank{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:15px 18px;font-size:.9rem}
 .don-bank h4{font-family:'Fraunces',Georgia,serif;font-size:1.02rem;margin-bottom:8px}
 .don-bank .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:5px 0;border-bottom:1px dashed var(--line)}
@@ -1247,8 +1247,17 @@ function paypalURL(tier){
 function donPayHTML(){
   const d=DON[currentLang]||DON.de, tier=TIERS[donSel];
   let h='';
-  // Bank details first
+  // PayPal first
+  if(PAY.paypal){
+    h+='<div class="don-pay" style="margin-bottom:4px">';
+    h+='<a class="btn btn-paypal btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
+    h+='</div>';
+  }
+  if(!PAY.paypal) h+='<p class="don-soon" style="margin-top:12px">'+d.soon+'</p>';
+  // Divider
   if(PAY.bank.iban){
+    h+='<div style="display:flex;align-items:center;gap:14px;margin:20px 0 16px;color:var(--ink-soft);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em"><span style="flex:1;height:1px;background:var(--line)"></span><span>oder</span><span style="flex:1;height:1px;background:var(--line)"></span></div>';
+    // Bank details below
     h+='<h3 style="margin:0 0 14px;font-family:\'Fraunces\',Georgia,serif;font-size:1.05rem;font-weight:600;color:var(--ink)">'+d.bankT+'</h3>';
     h+='<div class="don-bank">';
     if(PAY.bank.holder) h+='<div class="row"><span>'+d.holder+'</span><code>'+PAY.bank.holder+'</code><button class="don-copy" data-copy="'+PAY.bank.holder+'">'+d.copy+'</button></div>';
@@ -1260,15 +1269,6 @@ function donPayHTML(){
     h+='</div>';
     h+='<p class="dm-lead" style="margin-top:12px;font-size:.84rem;font-style:italic">'+d.bankNote+'</p>';
   }
-  // Divider
-  h+='<div style="display:flex;align-items:center;gap:14px;margin:20px 0 16px;color:var(--ink-soft);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em"><span style="flex:1;height:1px;background:var(--line)"></span><span>oder</span><span style="flex:1;height:1px;background:var(--line)"></span></div>';
-  // PayPal + GoFundMe below
-  h+='<div class="don-pay">';
-  if(PAY.paypal){
-    h+='<a class="btn btn-paypal btn-lg" target="_blank" rel="noopener" href="'+paypalURL(tier)+'">'+d.paypal+' · '+tier.eur+' €</a>';
-  }
-  h+='</div>';
-  if(!PAY.paypal) h+='<p class="don-soon" style="margin-top:12px">'+d.soon+'</p>';
   return h;
 }
 
