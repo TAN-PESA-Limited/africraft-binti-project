@@ -1104,6 +1104,26 @@ function applyLang(lang){
     const k=el.getAttribute('data-i18n');
     if(I18N[lang]&&I18N[lang][k]!==undefined) el.innerHTML=I18N[lang][k];
   });
+  /* Explicit ambassador card translation — data-i18n attributes on elements inside
+     <a> tags may be stripped by WordPress/Elementor HTML sanitizer, so we update
+     by CSS class selector as a reliable fallback. */
+  (function(){
+    const d=I18N[lang]; if(!d) return;
+    const cards=document.querySelectorAll('.amb-mini');
+    function upd(card,countryKey,sinceKey,textKey){
+      const flagSpan=card.querySelector('.amb-flag span');
+      if(flagSpan) flagSpan.innerHTML=d[countryKey]||'';
+      const roleSpans=card.querySelectorAll('.amb-role span');
+      if(roleSpans[0]) roleSpans[0].innerHTML=d.amb_role||'';
+      if(roleSpans[1]) roleSpans[1].innerHTML=d[sinceKey]||'';
+      const p=card.querySelector('p');
+      if(p) p.innerHTML=d[textKey]||'';
+      const lnk=card.querySelector('.amb-link');
+      if(lnk) lnk.innerHTML=d.amb_more||'';
+    }
+    if(cards[0]) upd(cards[0],'amb_de_country','amb_de_since','amb_de_text');
+    if(cards[1]) upd(cards[1],'amb_usa_country','amb_usa_since','amb_usa_text');
+  })();
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
   renderKit(lang); renderFaq(lang);
   if(typeof PAY!=='undefined'&&PAY.paypal) document.querySelectorAll('a.pp-link').forEach(a=>{a.href=PAY.paypal;});
