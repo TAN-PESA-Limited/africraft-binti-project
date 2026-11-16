@@ -31,6 +31,10 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,243,230,.92);backdro
 .brand .mark svg{width:60%}
 .brand small{display:block;font-family:'Space Grotesk';font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 .nav-right{display:flex;align-items:center;gap:14px}
+.lang{display:flex;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:100px;padding:4px;gap:2px;backdrop-filter:blur(6px)}
+.lang button{border:0;background:transparent;font-family:'Space Grotesk';font-weight:600;font-size:.78rem;color:var(--ink);padding:6px 12px;border-radius:100px;cursor:pointer;transition:.18s}
+.lang button.active{background:var(--ink);color:var(--cream)}
+@media(max-width:560px){.back-top{display:none}}
 .back-top{font-weight:600;font-size:.92rem;color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:1rem;padding:13px 26px;border-radius:100px;border:2px solid transparent;cursor:pointer;transition:.22s}
 .btn-primary{background:var(--rust);color:#fff;box-shadow:0 14px 30px -12px rgba(181,70,42,.6)}
@@ -91,7 +95,12 @@ footer a{color:var(--gold)}
       <img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/africraft-logo.avif" alt="AfriCraft Logo" style="height:36px;width:auto;display:block">
     </a>
     <div class="nav-right">
-      <a href="index.html#ambassadors" class="back-top">&larr; Botschafterinnen</a>
+      <div class="lang" role="group" aria-label="Sprache">
+        <button data-lang="en">EN</button>
+        <button data-lang="de" class="active">DE</button>
+        <button data-lang="sw">SW</button>
+      </div>
+      <a href="index.html#ambassadors" class="back-top" data-i18n="nav_back">&larr; Botschafterinnen</a>
     </div>
   </div>
 </header>
@@ -101,26 +110,26 @@ footer a{color:var(--gold)}
 <main>
   <section class="amb-hero">
     <div class="wrap two-col">
-      <div class="photo"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-portrait.jpg" alt="Verena Kahler, Botschafterin des Binti-Projekts in Deutschland"></div>
+      <div class="photo"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-portrait.jpg" data-i18n-alt="alt_portrait" alt="Verena Kahler, Botschafterin des Binti-Projekts in Deutschland"></div>
       <div class="intro">
-        <span class="flag">&#127465;&#127466; Deutschland</span>
+        <span class="flag" data-i18n="flag">&#127465;&#127466; Deutschland</span>
         <h1>Verena Kahler</h1>
-        <div class="role">Botschafterin &middot; seit 2023</div>
-        <p>Verena Kahler ist seit 2023 Botschafterin für das Binti-Projekt in Deutschland. Sie sammelt Spenden, organisiert Lesungen und Charity-Abende und trägt das Projekt in die deutsche Öffentlichkeit &ndash; von der eigenen Gartenparty bis zum Gespräch mit dem Bundespräsidenten.</p>
-        <a class="btn btn-primary" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener">Jetzt spenden</a>
+        <div class="role" data-i18n="role">Botschafterin &middot; seit 2023</div>
+        <p data-i18n="intro">Verena Kahler ist seit 2023 Botschafterin für das Binti-Projekt in Deutschland. Sie sammelt Spenden, organisiert Lesungen und Charity-Abende und trägt das Projekt in die deutsche Öffentlichkeit &ndash; von der eigenen Gartenparty bis zum Gespräch mit dem Bundespräsidenten.</p>
+        <a class="btn btn-primary" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" data-i18n="donate">Jetzt spenden</a>
       </div>
     </div>
   </section>
 
   <section class="band-section">
     <div class="wrap band-inner">
-      <div class="slogan">Ein Bändchen für Bildung</div>
-      <p>In Daressalam fertigt Peter Makesi unsere Binti-Bändchen von Hand &ndash; aus edlen Sandelholzsamen, Perle für Perle. In Deutschland wird jedes Bändchen zu einem Beitrag für ein Binti-Set: Ein Bändchen am Handgelenk, ein Mädchen mehr, das während seiner Periode zur Schule gehen kann. Verena gibt ab einer Spende von 15&nbsp;Euro ein Binti-Bändchen weiter.</p>
+      <div class="slogan" data-i18n="band_slogan">Ein Bändchen für Bildung</div>
+      <p data-i18n="band_text">In Daressalam fertigt Peter Makesi unsere Binti-Bändchen von Hand &ndash; aus edlen Sandelholzsamen, Perle für Perle. In Deutschland wird jedes Bändchen zu einem Beitrag für ein Binti-Set: Ein Bändchen am Handgelenk, ein Mädchen mehr, das während seiner Periode zur Schule gehen kann. Verena gibt ab einer Spende von 15&nbsp;Euro ein Binti-Bändchen weiter.</p>
       <div class="gal">
-        <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-herstellung.jpg" alt="Peter Makesi fertigt in Daressalam Binti-Bändchen aus Sandelholzsamen"><figcaption>Peter Makesi fertigt unsere Binti-Bändchen in Daressalam von Hand &ndash; aus edlen Sandelholzsamen.</figcaption></figure>
-        <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-lieferung.jpg" alt="Frisch gelieferte Binti-Bändchen neben einem Karibu-Schild"><figcaption>Ahsante sana &ndash; eine frische Lieferung Binti-Bändchen aus Tansania.</figcaption></figure>
-        <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-haende.jpg" alt="Hände verschiedener Hautfarben, alle mit einem roten Binti-Bändchen"><figcaption>Ein Bändchen verbindet &ndash; über Länder und Kontinente hinweg.</figcaption></figure>
-        <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-herz.jpg" alt="Binti-Bändchen als Herz auf einem Steg am Wasser gelegt"><figcaption>Jedes Bändchen steht für ein Stück Bildung.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-herstellung.jpg" data-i18n-alt="b1_alt" alt="Peter Makesi fertigt in Daressalam Binti-Bändchen aus Sandelholzsamen"><figcaption data-i18n="b1_cap">Peter Makesi fertigt unsere Binti-Bändchen in Daressalam von Hand &ndash; aus edlen Sandelholzsamen.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-lieferung.jpg" data-i18n-alt="b2_alt" alt="Frisch gelieferte Binti-Bändchen neben einem Karibu-Schild"><figcaption data-i18n="b2_cap">Ahsante sana &ndash; eine frische Lieferung Binti-Bändchen aus Tansania.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-haende.jpg" data-i18n-alt="b3_alt" alt="Hände verschiedener Hautfarben, alle mit einem roten Binti-Bändchen"><figcaption data-i18n="b3_cap">Ein Bändchen verbindet &ndash; über Länder und Kontinente hinweg.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/baendchen-herz.jpg" data-i18n-alt="b4_alt" alt="Binti-Bändchen als Herz auf einem Steg am Wasser gelegt"><figcaption data-i18n="b4_cap">Jedes Bändchen steht für ein Stück Bildung.</figcaption></figure>
       </div>
     </div>
   </section>
@@ -128,15 +137,15 @@ footer a{color:var(--gold)}
   <section class="prose">
     <div class="wrap">
       <div class="ev">
-        <div class="kicker">Fest der Produktionsallianz &middot; Berlin</div>
-        <h2>Binti beim Bundespräsidenten</h2>
-        <div class="quote">&bdquo;Ich hatte die phantastische Möglichkeit, unserem Bundespräsidenten Frank-Walter Steinmeier mein Herzensprojekt &sbquo;Binti Tanzania&lsquo; vorzustellen.&ldquo;</div>
-        <p>Ich danke von Herzen für das interessierte und sehr sympathische Gespräch.</p>
+        <div class="kicker" data-i18n="ev1_kicker">Fest der Produktionsallianz &middot; Berlin</div>
+        <h2 data-i18n="ev1_title">Binti beim Bundespräsidenten</h2>
+        <div class="quote" data-i18n="ev1_quote">&bdquo;Ich hatte die phantastische Möglichkeit, unserem Bundespräsidenten Frank-Walter Steinmeier mein Herzensprojekt &sbquo;Binti Tanzania&lsquo; vorzustellen.&ldquo;</div>
+        <p data-i18n="ev1_p">Ich danke von Herzen für das interessierte und sehr sympathische Gespräch.</p>
         <div class="gal">
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-3.jpg" alt="Verena Kahler mit Bundespräsident Frank-Walter Steinmeier"><figcaption>Mit Bundespräsident Frank-Walter Steinmeier beim Fest der Produktionsallianz in Berlin.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-1.jpg" alt="Bundespräsident Steinmeier betrachtet das Binti-Bändchen an seinem Handgelenk"><figcaption>Das Binti-Bändchen am Handgelenk des Bundespräsidenten.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-2.jpg" alt="Verena Kahler zeigt dem Bundespräsidenten das Binti-Bändchen"><figcaption>Ein Bändchen erklärt das Projekt schneller als jede Broschüre.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-4.jpg" alt="Verena Kahler im Gespräch mit dem Bundespräsidenten"><figcaption>Ein interessiertes und sehr sympathisches Gespräch.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-3.jpg" data-i18n-alt="s3_alt" alt="Verena Kahler mit Bundespräsident Frank-Walter Steinmeier"><figcaption data-i18n="s3_cap">Mit Bundespräsident Frank-Walter Steinmeier beim Fest der Produktionsallianz in Berlin.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-1.jpg" data-i18n-alt="s1_alt" alt="Bundespräsident Steinmeier betrachtet das Binti-Bändchen an seinem Handgelenk"><figcaption data-i18n="s1_cap">Das Binti-Bändchen am Handgelenk des Bundespräsidenten.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-2.jpg" data-i18n-alt="s2_alt" alt="Verena Kahler zeigt dem Bundespräsidenten das Binti-Bändchen"><figcaption data-i18n="s2_cap">Ein Bändchen erklärt das Projekt schneller als jede Broschüre.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-steinmeier-4.jpg" data-i18n-alt="s4_alt" alt="Verena Kahler im Gespräch mit dem Bundespräsidenten"><figcaption data-i18n="s4_cap">Ein interessiertes und sehr sympathisches Gespräch.</figcaption></figure>
         </div>
       </div>
     </div>
@@ -144,57 +153,57 @@ footer a{color:var(--gold)}
 
   <section class="prose" style="padding-top:0">
     <div class="wrap">
-      <h2>Events</h2>
-      <p class="muted">Was in Deutschland für Binti passiert &ndash; der Reihe nach.</p>
+      <h2 data-i18n="events_title">Events</h2>
+      <p class="muted" data-i18n="events_muted">Was in Deutschland für Binti passiert &ndash; der Reihe nach.</p>
 
       <div class="ev">
-        <div class="kicker">August 2024</div>
-        <h2>Charity-Lesung im Fliegenden Theater</h2>
-        <p>Unsere Charity-Lesung im Fliegenden Theater &ndash; mit der wundervollen Edelgard Hansen und &bdquo;Eric der Hund&ldquo;.</p>
+        <div class="kicker" data-i18n="ev2_kicker">August 2024</div>
+        <h2 data-i18n="ev2_title">Charity-Lesung im Fliegenden Theater</h2>
+        <p data-i18n="ev2_p">Unsere Charity-Lesung im Fliegenden Theater &ndash; mit der wundervollen Edelgard Hansen und &bdquo;Eric der Hund&ldquo;.</p>
         <div class="gal">
-          <figure class="wide"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-lesung-1.jpg" alt="Edelgard Hansen und Verena Kahler proben für die Charity-Lesung"><figcaption>Probe für die Lesung: Edelgard Hansen und Verena Kahler &ndash; mit &bdquo;Eric der Hund&ldquo;.</figcaption></figure>
-          <figure class="wide"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-lesung-2.jpg" alt="Edelgard Hansen und Verena Kahler bei der Probe zur Charity-Lesung"><figcaption>Aus den Proben zur Charity-Lesung.</figcaption></figure>
-          <figure class="wide"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-lesung-3.jpg" alt="Edelgard Hansen und Verena Kahler mit aufgeschlagenen Büchern"><figcaption>Gelesen wurde zugunsten von Binti Tanzania.</figcaption></figure>
+          <figure class="wide"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-lesung-1.jpg" data-i18n-alt="l1_alt" alt="Edelgard Hansen und Verena Kahler proben für die Charity-Lesung"><figcaption data-i18n="l1_cap">Probe für die Lesung: Edelgard Hansen und Verena Kahler &ndash; mit &bdquo;Eric der Hund&ldquo;.</figcaption></figure>
+          <figure class="wide"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-lesung-2.jpg" data-i18n-alt="l2_alt" alt="Edelgard Hansen und Verena Kahler bei der Probe zur Charity-Lesung"><figcaption data-i18n="l2_cap">Aus den Proben zur Charity-Lesung.</figcaption></figure>
+          <figure class="wide"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-lesung-3.jpg" data-i18n-alt="l3_alt" alt="Edelgard Hansen und Verena Kahler mit aufgeschlagenen Büchern"><figcaption data-i18n="l3_cap">Gelesen wurde zugunsten von Binti Tanzania.</figcaption></figure>
         </div>
       </div>
 
       <div class="ev">
-        <div class="kicker">August 2025</div>
-        <h2>Binti Charity Party</h2>
-        <p>Im August 2025 durfte ich zu meiner &bdquo;Binti Charity Party&ldquo; viele tolle Menschen bei mir begrüßen: Freund*innen, Kolleg*innen, &bdquo;alte&ldquo; Bekannte &ndash; und viele neue Kontakte.</p>
-        <p>Kulturelle Highlights waren großartige Künstler*innen, die alle ohne Gage auftraten: Una Gonschor, Robby Edwards, Susanna Bartilla, Hugo Fernandez und Charles Wynn. Dazu stellten namhafte bildende Künstler*innen ihre Werke für eine Charity-Versteigerung zur Verfügung, unter anderem René Cassio Scholz, Ute Manoloudakis, Jasmin Sylla-Bugarin, Juliane Kufferath und &bdquo;art of Léon&ldquo; &ndash; sowie handsignierte CDs von &bdquo;SpongeBob&ldquo; alias Santiago Ziesmer.</p>
-        <p>Ein großes Dankeschön an Dietmar Wunder für seine charmante Moderation, an Joshua Wunder für die super Simultanübersetzung der Rede von AfriCraft-CEO Kelvin Nicholas und &ndash; introducing &ndash; an Nisha Wunder für ihre eindrucksvolle Interpretation von Whitney-Houston-Songs.</p>
-        <p>Viele meiner Gäste wurden an diesem Abend zum ersten Mal auf dieses große Problem aufmerksam.</p>
+        <div class="kicker" data-i18n="ev3_kicker">August 2025</div>
+        <h2 data-i18n="ev3_title">Binti Charity Party</h2>
+        <p data-i18n="ev3_p1">Im August 2025 durfte ich zu meiner &bdquo;Binti Charity Party&ldquo; viele tolle Menschen bei mir begrüßen: Freund*innen, Kolleg*innen, &bdquo;alte&ldquo; Bekannte &ndash; und viele neue Kontakte.</p>
+        <p data-i18n="ev3_p2">Kulturelle Highlights waren großartige Künstler*innen, die alle ohne Gage auftraten: Una Gonschor, Robby Edwards, Susanna Bartilla, Hugo Fernandez und Charles Wynn. Dazu stellten namhafte bildende Künstler*innen ihre Werke für eine Charity-Versteigerung zur Verfügung, unter anderem René Cassio Scholz, Ute Manoloudakis, Jasmin Sylla-Bugarin, Juliane Kufferath und &bdquo;art of Léon&ldquo; &ndash; sowie handsignierte CDs von &bdquo;SpongeBob&ldquo; alias Santiago Ziesmer.</p>
+        <p data-i18n="ev3_p3">Ein großes Dankeschön an Dietmar Wunder für seine charmante Moderation, an Joshua Wunder für die super Simultanübersetzung der Rede von AfriCraft-CEO Kelvin Nicholas und &ndash; introducing &ndash; an Nisha Wunder für ihre eindrucksvolle Interpretation von Whitney-Houston-Songs.</p>
+        <p data-i18n="ev3_p4">Viele meiner Gäste wurden an diesem Abend zum ersten Mal auf dieses große Problem aufmerksam.</p>
         <div class="gal">
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-dietmar-wunder-1.jpg" alt="Dietmar Wunder moderiert die Binti Charity Party"><figcaption>Dietmar Wunder &ndash; Schauspieler und die deutsche Stimme von Daniel Craig alias James Bond &ndash; moderierte charmant durch den Abend.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-dietmar-wunder-2.jpg" alt="Dietmar Wunder mit Mikrofon im Garten"><figcaption>Alle Künstler*innen traten ohne Gage zugunsten &bdquo;Binti Tanzania&ldquo; auf.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-kelvin-rede.jpg" alt="Kelvin Nicholas, CEO von AfriCraft, spricht bei der Binti Charity Party, simultan &uuml;bersetzt von Joshua Wunder"><figcaption>Kelvin Nicholas, CEO von AfriCraft, erkl&auml;rt meinen G&auml;sten, was &bdquo;Binti Tanzania&ldquo; ist und wof&uuml;r der Name steht &ndash; simultan &uuml;bersetzt und mit eigenem frischen Stil erg&auml;nzt von Joshua Wunder.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-musik-saengerin.jpg" alt="Susanna Bartilla singt, begleitet von Hugo Fernandez an der Gitarre"><figcaption>Susanna Bartilla, die bekannte deutsch-französische Jazzsängerin, begleitet von Hugo Fernandez.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-musik-saxophon.jpg" alt="Una Gonschor mit Robby Edwards am Saxophon"><figcaption>Una Gonschor &ndash; Sängerin, Schriftstellerin und Gründerin des Vereins Namu Art for Life &ndash; mit Robby Edwards am Saxophon.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-charles-wynn.jpg" alt="Charles Wynn singt bei der Binti Charity Party"><figcaption>Charles Wynn, Sänger und Tänzer, berührte und begeisterte mit seiner einfühlsamen Soulstimme.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-event-gaeste-1.jpg" alt="Meinolf Kuper, Verena Kahler und Kelvin Nicholas"><figcaption>Meinolf Kuper, Gründer von AfriCraft, und CEO Kelvin Nicholas mit mir in der Mitte &ndash; glücklich über den gelungenen Tag.</figcaption></figure>
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-event-gaeste-2.jpg" alt="Verena Kahler mit Claudia und Denis Bergemann"><figcaption>Mit Claudia und Denis Bergemann von der Agentur Sprecherdatei.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-dietmar-wunder-1.jpg" data-i18n-alt="e1_alt" alt="Dietmar Wunder moderiert die Binti Charity Party"><figcaption data-i18n="e1_cap">Dietmar Wunder &ndash; Schauspieler und die deutsche Stimme von Daniel Craig alias James Bond &ndash; moderierte charmant durch den Abend.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-dietmar-wunder-2.jpg" data-i18n-alt="e2_alt" alt="Dietmar Wunder mit Mikrofon im Garten"><figcaption data-i18n="e2_cap">Alle Künstler*innen traten ohne Gage zugunsten &bdquo;Binti Tanzania&ldquo; auf.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-kelvin-rede.jpg" data-i18n-alt="e3_alt" alt="Kelvin Nicholas, CEO von AfriCraft, spricht bei der Binti Charity Party, simultan übersetzt von Joshua Wunder"><figcaption data-i18n="e3_cap">Kelvin Nicholas, CEO von AfriCraft, erklärt meinen Gästen, was &bdquo;Binti Tanzania&ldquo; ist und wofür der Name steht &ndash; simultan übersetzt und mit eigenem frischen Stil ergänzt von Joshua Wunder.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-musik-saengerin.jpg" data-i18n-alt="e4_alt" alt="Susanna Bartilla singt, begleitet von Hugo Fernandez an der Gitarre"><figcaption data-i18n="e4_cap">Susanna Bartilla, die bekannte deutsch-französische Jazzsängerin, begleitet von Hugo Fernandez.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-musik-saxophon.jpg" data-i18n-alt="e5_alt" alt="Una Gonschor mit Robby Edwards am Saxophon"><figcaption data-i18n="e5_cap">Una Gonschor &ndash; Sängerin, Schriftstellerin und Gründerin des Vereins Namu Art for Life &ndash; mit Robby Edwards am Saxophon.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/event-charles-wynn.jpg" data-i18n-alt="e6_alt" alt="Charles Wynn singt bei der Binti Charity Party"><figcaption data-i18n="e6_cap">Charles Wynn, Sänger und Tänzer, berührte und begeisterte mit seiner einfühlsamen Soulstimme.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-event-gaeste-1.jpg" data-i18n-alt="e7_alt" alt="Meinolf Kuper, Verena Kahler und Kelvin Nicholas"><figcaption data-i18n="e7_cap">Meinolf Kuper, Gründer von AfriCraft, und CEO Kelvin Nicholas mit mir in der Mitte &ndash; glücklich über den gelungenen Tag.</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/verena-event-gaeste-2.jpg" data-i18n-alt="e8_alt" alt="Verena Kahler mit Claudia und Denis Bergemann"><figcaption data-i18n="e8_cap">Mit Claudia und Denis Bergemann von der Agentur Sprecherdatei.</figcaption></figure>
         </div>
       </div>
 
       <div class="ev">
-        <div class="kicker">Oktober / November 2025</div>
-        <h2>Der Like-Marathon von Synchronstar</h2>
-        <p>Meine Sprecheragentur &bdquo;Synchronstar&ldquo; stellte im Oktober und November 2025 Spendengeld f&uuml;r zwei soziale Projekte online: eines f&uuml;r den Tierschutz und eines f&uuml;r Einrichtungen und Projekte, die Menschen unterst&uuml;tzen.</p>
-        <p>Man konnte sich mit seinem Lieblingsprojekt bewerben und auf Instagram Likes sammeln &ndash; das Projekt mit den am Ende meisten Likes gewann das ausgesetzte Spendengeld. So begann ein Like-Marathon &uuml;ber mehrere Tage, mit vielen anderen tollen Projekten.</p>
-        <p>Durch meine tollen Unterst&uuml;tzer*innen und das gro&szlig;z&uuml;gige Spendengeld von &bdquo;Synchronstar&ldquo; gewann ich die 2.000&nbsp;Euro f&uuml;r &bdquo;Binti Tanzania&ldquo;.</p>
-        <div class="quote">Nochmals ganz herzlichen Dank an alle, die von nah und fern f&uuml;r mein Herzensprojekt geliked haben.</div>
+        <div class="kicker" data-i18n="ev4_kicker">Oktober / November 2025</div>
+        <h2 data-i18n="ev4_title">Der Like-Marathon von Synchronstar</h2>
+        <p data-i18n="ev4_p1">Meine Sprecheragentur &bdquo;Synchronstar&ldquo; stellte im Oktober und November 2025 Spendengeld für zwei soziale Projekte online: eines für den Tierschutz und eines für Einrichtungen und Projekte, die Menschen unterstützen.</p>
+        <p data-i18n="ev4_p2">Man konnte sich mit seinem Lieblingsprojekt bewerben und auf Instagram Likes sammeln &ndash; das Projekt mit den am Ende meisten Likes gewann das ausgesetzte Spendengeld. So begann ein Like-Marathon über mehrere Tage, mit vielen anderen tollen Projekten.</p>
+        <p data-i18n="ev4_p3">Durch meine tollen Unterstützer*innen und das großzügige Spendengeld von &bdquo;Synchronstar&ldquo; gewann ich die 2.000&nbsp;Euro für &bdquo;Binti Tanzania&ldquo;.</p>
+        <div class="quote" data-i18n="ev4_quote">Nochmals ganz herzlichen Dank an alle, die von nah und fern für mein Herzensprojekt geliked haben.</div>
         <div class="gal one">
-          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/synchronstar-marathon.jpg" alt="Ergebnis des Synchronstar-Spendenmarathons: 2.000 Euro f&uuml;r AfriCraft"><figcaption>Das Ergebnis: Je 2.000&nbsp;Euro gingen an AfriCraft und an die Erfurter Tauben e.&nbsp;V. Grafik: Synchronstar</figcaption></figure>
+          <figure><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/synchronstar-marathon.jpg" data-i18n-alt="m_alt" alt="Ergebnis des Synchronstar-Spendenmarathons: 2.000 Euro für AfriCraft"><figcaption data-i18n="m_cap">Das Ergebnis: Je 2.000&nbsp;Euro gingen an AfriCraft und an die Erfurter Tauben e.&nbsp;V. Grafik: Synchronstar</figcaption></figure>
         </div>
       </div>
 
       <div class="factbox">
-        <b>AfriCraft e.&nbsp;V.</b>
-        Am 10.&nbsp;April 2025 beim Amtsgericht Charlottenburg in das Vereinsregister eingetragen. Die Anerkennung der Gemeinnützigkeit wird derzeit geprüft.
+        <b data-i18n="fact_title">AfriCraft e.&nbsp;V.</b>
+        <span data-i18n="fact_text">Am 10.&nbsp;April 2025 beim Amtsgericht Charlottenburg in das Vereinsregister eingetragen. Die Anerkennung der Gemeinnützigkeit wird derzeit geprüft.</span>
       </div>
 
-      <a class="back" href="index.html#ambassadors">&larr; Zurück zu den Botschafterinnen</a>
+      <a class="back" href="index.html#ambassadors" data-i18n="back">&larr; Zurück zu den Botschafterinnen</a>
     </div>
   </section>
 </main>
@@ -203,9 +212,283 @@ footer a{color:var(--gold)}
 <footer>
   <div class="wrap">
     <span>&copy; <span id="y"></span> AfriCraft &middot; Binti Project</span>
-    <span><a href="index.html">Zur Hauptseite</a></span>
+    <span><a href="index.html" class="footer-home" data-i18n="footer_home">Zur Hauptseite</a></span>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>
+const I18N = {
+  de:{
+    meta_title:"Verena Kahler, Botschafterin Deutschland | Binti Project",
+    meta_desc:"Verena Kahler ist seit 2023 Botschafterin für das Binti-Projekt in Deutschland. Mit dem Bändchen für Bildung finanziert sie Binti-Sets für Schulmädchen in Tansania.",
+    aria_lang:"Sprache",
+    nav_back:"&larr; Botschafterinnen",
+    footer_home:"Zur Hauptseite",
+    alt_portrait:"Verena Kahler, Botschafterin des Binti-Projekts in Deutschland",
+    flag:"&#127465;&#127466; Deutschland",
+    role:"Botschafterin &middot; seit 2023",
+    intro:"Verena Kahler ist seit 2023 Botschafterin für das Binti-Projekt in Deutschland. Sie sammelt Spenden, organisiert Lesungen und Charity-Abende und trägt das Projekt in die deutsche Öffentlichkeit &ndash; von der eigenen Gartenparty bis zum Gespräch mit dem Bundespräsidenten.",
+    donate:"Jetzt spenden",
+    band_slogan:"Ein Bändchen für Bildung",
+    band_text:"In Daressalam fertigt Peter Makesi unsere Binti-Bändchen von Hand &ndash; aus edlen Sandelholzsamen, Perle für Perle. In Deutschland wird jedes Bändchen zu einem Beitrag für ein Binti-Set: Ein Bändchen am Handgelenk, ein Mädchen mehr, das während seiner Periode zur Schule gehen kann. Verena gibt ab einer Spende von 15&nbsp;Euro ein Binti-Bändchen weiter.",
+    b1_alt:"Peter Makesi fertigt in Daressalam Binti-Bändchen aus Sandelholzsamen",
+    b1_cap:"Peter Makesi fertigt unsere Binti-Bändchen in Daressalam von Hand &ndash; aus edlen Sandelholzsamen.",
+    b2_alt:"Frisch gelieferte Binti-Bändchen neben einem Karibu-Schild",
+    b2_cap:"Ahsante sana &ndash; eine frische Lieferung Binti-Bändchen aus Tansania.",
+    b3_alt:"Hände verschiedener Hautfarben, alle mit einem roten Binti-Bändchen",
+    b3_cap:"Ein Bändchen verbindet &ndash; über Länder und Kontinente hinweg.",
+    b4_alt:"Binti-Bändchen als Herz auf einem Steg am Wasser gelegt",
+    b4_cap:"Jedes Bändchen steht für ein Stück Bildung.",
+    ev1_kicker:"Fest der Produktionsallianz &middot; Berlin",
+    ev1_title:"Binti beim Bundespräsidenten",
+    ev1_quote:"&bdquo;Ich hatte die phantastische Möglichkeit, unserem Bundespräsidenten Frank-Walter Steinmeier mein Herzensprojekt &sbquo;Binti Tanzania&lsquo; vorzustellen.&ldquo;",
+    ev1_p:"Ich danke von Herzen für das interessierte und sehr sympathische Gespräch.",
+    s3_alt:"Verena Kahler mit Bundespräsident Frank-Walter Steinmeier",
+    s3_cap:"Mit Bundespräsident Frank-Walter Steinmeier beim Fest der Produktionsallianz in Berlin.",
+    s1_alt:"Bundespräsident Steinmeier betrachtet das Binti-Bändchen an seinem Handgelenk",
+    s1_cap:"Das Binti-Bändchen am Handgelenk des Bundespräsidenten.",
+    s2_alt:"Verena Kahler zeigt dem Bundespräsidenten das Binti-Bändchen",
+    s2_cap:"Ein Bändchen erklärt das Projekt schneller als jede Broschüre.",
+    s4_alt:"Verena Kahler im Gespräch mit dem Bundespräsidenten",
+    s4_cap:"Ein interessiertes und sehr sympathisches Gespräch.",
+    events_title:"Events",
+    events_muted:"Was in Deutschland für Binti passiert &ndash; der Reihe nach.",
+    ev2_kicker:"August 2024",
+    ev2_title:"Charity-Lesung im Fliegenden Theater",
+    ev2_p:"Unsere Charity-Lesung im Fliegenden Theater &ndash; mit der wundervollen Edelgard Hansen und &bdquo;Eric der Hund&ldquo;.",
+    l1_alt:"Edelgard Hansen und Verena Kahler proben für die Charity-Lesung",
+    l1_cap:"Probe für die Lesung: Edelgard Hansen und Verena Kahler &ndash; mit &bdquo;Eric der Hund&ldquo;.",
+    l2_alt:"Edelgard Hansen und Verena Kahler bei der Probe zur Charity-Lesung",
+    l2_cap:"Aus den Proben zur Charity-Lesung.",
+    l3_alt:"Edelgard Hansen und Verena Kahler mit aufgeschlagenen Büchern",
+    l3_cap:"Gelesen wurde zugunsten von Binti Tanzania.",
+    ev3_kicker:"August 2025",
+    ev3_title:"Binti Charity Party",
+    ev3_p1:"Im August 2025 durfte ich zu meiner &bdquo;Binti Charity Party&ldquo; viele tolle Menschen bei mir begrüßen: Freund*innen, Kolleg*innen, &bdquo;alte&ldquo; Bekannte &ndash; und viele neue Kontakte.",
+    ev3_p2:"Kulturelle Highlights waren großartige Künstler*innen, die alle ohne Gage auftraten: Una Gonschor, Robby Edwards, Susanna Bartilla, Hugo Fernandez und Charles Wynn. Dazu stellten namhafte bildende Künstler*innen ihre Werke für eine Charity-Versteigerung zur Verfügung, unter anderem René Cassio Scholz, Ute Manoloudakis, Jasmin Sylla-Bugarin, Juliane Kufferath und &bdquo;art of Léon&ldquo; &ndash; sowie handsignierte CDs von &bdquo;SpongeBob&ldquo; alias Santiago Ziesmer.",
+    ev3_p3:"Ein großes Dankeschön an Dietmar Wunder für seine charmante Moderation, an Joshua Wunder für die super Simultanübersetzung der Rede von AfriCraft-CEO Kelvin Nicholas und &ndash; introducing &ndash; an Nisha Wunder für ihre eindrucksvolle Interpretation von Whitney-Houston-Songs.",
+    ev3_p4:"Viele meiner Gäste wurden an diesem Abend zum ersten Mal auf dieses große Problem aufmerksam.",
+    e1_alt:"Dietmar Wunder moderiert die Binti Charity Party",
+    e1_cap:"Dietmar Wunder &ndash; Schauspieler und die deutsche Stimme von Daniel Craig alias James Bond &ndash; moderierte charmant durch den Abend.",
+    e2_alt:"Dietmar Wunder mit Mikrofon im Garten",
+    e2_cap:"Alle Künstler*innen traten ohne Gage zugunsten &bdquo;Binti Tanzania&ldquo; auf.",
+    e3_alt:"Kelvin Nicholas, CEO von AfriCraft, spricht bei der Binti Charity Party, simultan übersetzt von Joshua Wunder",
+    e3_cap:"Kelvin Nicholas, CEO von AfriCraft, erklärt meinen Gästen, was &bdquo;Binti Tanzania&ldquo; ist und wofür der Name steht &ndash; simultan übersetzt und mit eigenem frischen Stil ergänzt von Joshua Wunder.",
+    e4_alt:"Susanna Bartilla singt, begleitet von Hugo Fernandez an der Gitarre",
+    e4_cap:"Susanna Bartilla, die bekannte deutsch-französische Jazzsängerin, begleitet von Hugo Fernandez.",
+    e5_alt:"Una Gonschor mit Robby Edwards am Saxophon",
+    e5_cap:"Una Gonschor &ndash; Sängerin, Schriftstellerin und Gründerin des Vereins Namu Art for Life &ndash; mit Robby Edwards am Saxophon.",
+    e6_alt:"Charles Wynn singt bei der Binti Charity Party",
+    e6_cap:"Charles Wynn, Sänger und Tänzer, berührte und begeisterte mit seiner einfühlsamen Soulstimme.",
+    e7_alt:"Meinolf Kuper, Verena Kahler und Kelvin Nicholas",
+    e7_cap:"Meinolf Kuper, Gründer von AfriCraft, und CEO Kelvin Nicholas mit mir in der Mitte &ndash; glücklich über den gelungenen Tag.",
+    e8_alt:"Verena Kahler mit Claudia und Denis Bergemann",
+    e8_cap:"Mit Claudia und Denis Bergemann von der Agentur Sprecherdatei.",
+    ev4_kicker:"Oktober / November 2025",
+    ev4_title:"Der Like-Marathon von Synchronstar",
+    ev4_p1:"Meine Sprecheragentur &bdquo;Synchronstar&ldquo; stellte im Oktober und November 2025 Spendengeld für zwei soziale Projekte online: eines für den Tierschutz und eines für Einrichtungen und Projekte, die Menschen unterstützen.",
+    ev4_p2:"Man konnte sich mit seinem Lieblingsprojekt bewerben und auf Instagram Likes sammeln &ndash; das Projekt mit den am Ende meisten Likes gewann das ausgesetzte Spendengeld. So begann ein Like-Marathon über mehrere Tage, mit vielen anderen tollen Projekten.",
+    ev4_p3:"Durch meine tollen Unterstützer*innen und das großzügige Spendengeld von &bdquo;Synchronstar&ldquo; gewann ich die 2.000&nbsp;Euro für &bdquo;Binti Tanzania&ldquo;.",
+    ev4_quote:"Nochmals ganz herzlichen Dank an alle, die von nah und fern für mein Herzensprojekt geliked haben.",
+    m_alt:"Ergebnis des Synchronstar-Spendenmarathons: 2.000 Euro für AfriCraft",
+    m_cap:"Das Ergebnis: Je 2.000&nbsp;Euro gingen an AfriCraft und an die Erfurter Tauben e.&nbsp;V. Grafik: Synchronstar",
+    fact_title:"AfriCraft e.&nbsp;V.",
+    fact_text:"Am 10.&nbsp;April 2025 beim Amtsgericht Charlottenburg in das Vereinsregister eingetragen. Die Anerkennung der Gemeinnützigkeit wird derzeit geprüft.",
+    back:"&larr; Zurück zu den Botschafterinnen",
+  },
+  en:{
+    meta_title:"Verena Kahler, Ambassador Germany | Binti Project",
+    meta_desc:"Verena Kahler has been the Binti Project's ambassador in Germany since 2023. With the bracelet for education she funds Binti kits for schoolgirls in Tanzania.",
+    aria_lang:"Language",
+    nav_back:"&larr; Ambassadors",
+    footer_home:"To the main page",
+    alt_portrait:"Verena Kahler, ambassador of the Binti Project in Germany",
+    flag:"&#127465;&#127466; Germany",
+    role:"Ambassador &middot; since 2023",
+    intro:"Verena Kahler has been the Binti Project's ambassador in Germany since 2023. She raises funds, organises readings and charity evenings and brings the project to the German public &ndash; from her own garden party to a conversation with the Federal President.",
+    donate:"Donate now",
+    band_slogan:"A bracelet for education",
+    band_text:"In Dar es Salaam, Peter Makesi makes our Binti bracelets by hand &ndash; from fine sandalwood seeds, bead by bead. In Germany every bracelet becomes a contribution towards a Binti kit: one bracelet on a wrist, one more girl who can go to school during her period. Verena gives a Binti bracelet for every donation of 15&nbsp;euros or more.",
+    b1_alt:"Peter Makesi making Binti bracelets from sandalwood seeds in Dar es Salaam",
+    b1_cap:"Peter Makesi makes our Binti bracelets by hand in Dar es Salaam &ndash; from fine sandalwood seeds.",
+    b2_alt:"Freshly delivered Binti bracelets next to a Karibu sign",
+    b2_cap:"Ahsante sana &ndash; a fresh delivery of Binti bracelets from Tanzania.",
+    b3_alt:"Hands of different skin colours, all wearing a red Binti bracelet",
+    b3_cap:"One bracelet connects &ndash; across countries and continents.",
+    b4_alt:"Binti bracelets laid out as a heart on a jetty by the water",
+    b4_cap:"Every bracelet stands for a piece of education.",
+    ev1_kicker:"Production Alliance Festival &middot; Berlin",
+    ev1_title:"Binti meets the Federal President",
+    ev1_quote:"&ldquo;I had the fantastic opportunity to present my heart project &lsquo;Binti Tanzania&rsquo; to our Federal President Frank-Walter Steinmeier.&rdquo;",
+    ev1_p:"My heartfelt thanks for such an interested and warm conversation.",
+    s3_alt:"Verena Kahler with Federal President Frank-Walter Steinmeier",
+    s3_cap:"With Federal President Frank-Walter Steinmeier at the Production Alliance Festival in Berlin.",
+    s1_alt:"Federal President Steinmeier looking at the Binti bracelet on his wrist",
+    s1_cap:"The Binti bracelet on the Federal President's wrist.",
+    s2_alt:"Verena Kahler showing the Federal President the Binti bracelet",
+    s2_cap:"A bracelet explains the project faster than any brochure.",
+    s4_alt:"Verena Kahler in conversation with the Federal President",
+    s4_cap:"An interested and very warm conversation.",
+    events_title:"Events",
+    events_muted:"What is happening for Binti in Germany &ndash; in order.",
+    ev2_kicker:"August 2024",
+    ev2_title:"Charity reading at the Fliegendes Theater",
+    ev2_p:"Our charity reading at the Fliegendes Theater &ndash; with the wonderful Edelgard Hansen and &ldquo;Eric the dog&rdquo;.",
+    l1_alt:"Edelgard Hansen and Verena Kahler rehearsing for the charity reading",
+    l1_cap:"Rehearsal for the reading: Edelgard Hansen and Verena Kahler &ndash; with &ldquo;Eric the dog&rdquo;.",
+    l2_alt:"Edelgard Hansen and Verena Kahler at the rehearsal for the charity reading",
+    l2_cap:"From the rehearsals for the charity reading.",
+    l3_alt:"Edelgard Hansen and Verena Kahler with open books",
+    l3_cap:"The reading was held in aid of Binti Tanzania.",
+    ev3_kicker:"August 2025",
+    ev3_title:"Binti Charity Party",
+    ev3_p1:"In August 2025 I welcomed many wonderful people to my &ldquo;Binti Charity Party&rdquo;: friends, colleagues, &ldquo;old&rdquo; acquaintances &ndash; and many new contacts.",
+    ev3_p2:"The cultural highlights were great artists who all performed without a fee: Una Gonschor, Robby Edwards, Susanna Bartilla, Hugo Fernandez and Charles Wynn. Renowned visual artists also donated their works for a charity auction, among them René Cassio Scholz, Ute Manoloudakis, Jasmin Sylla-Bugarin, Juliane Kufferath and &ldquo;art of Léon&rdquo; &ndash; as well as hand-signed CDs by &ldquo;SpongeBob&rdquo; alias Santiago Ziesmer.",
+    ev3_p3:"A big thank-you to Dietmar Wunder for his charming hosting, to Joshua Wunder for the superb simultaneous translation of the speech by AfriCraft CEO Kelvin Nicholas and &ndash; introducing &ndash; to Nisha Wunder for her impressive interpretation of Whitney Houston songs.",
+    ev3_p4:"For many of my guests, that evening was the first time they became aware of this major problem.",
+    e1_alt:"Dietmar Wunder hosting the Binti Charity Party",
+    e1_cap:"Dietmar Wunder &ndash; actor and the German voice of Daniel Craig alias James Bond &ndash; charmingly hosted the evening.",
+    e2_alt:"Dietmar Wunder with a microphone in the garden",
+    e2_cap:"All artists performed without a fee in aid of &ldquo;Binti Tanzania&rdquo;.",
+    e3_alt:"Kelvin Nicholas, CEO of AfriCraft, speaking at the Binti Charity Party, simultaneously translated by Joshua Wunder",
+    e3_cap:"Kelvin Nicholas, CEO of AfriCraft, explains to my guests what &ldquo;Binti Tanzania&rdquo; is and what the name stands for &ndash; simultaneously translated, and complemented in his own fresh style, by Joshua Wunder.",
+    e4_alt:"Susanna Bartilla singing, accompanied by Hugo Fernandez on guitar",
+    e4_cap:"Susanna Bartilla, the well-known German-French jazz singer, accompanied by Hugo Fernandez.",
+    e5_alt:"Una Gonschor with Robby Edwards on saxophone",
+    e5_cap:"Una Gonschor &ndash; singer, writer and founder of the association Namu Art for Life &ndash; with Robby Edwards on saxophone.",
+    e6_alt:"Charles Wynn singing at the Binti Charity Party",
+    e6_cap:"Charles Wynn, singer and dancer, moved and delighted everyone with his soulful voice.",
+    e7_alt:"Meinolf Kuper, Verena Kahler and Kelvin Nicholas",
+    e7_cap:"Meinolf Kuper, founder of AfriCraft, and CEO Kelvin Nicholas with me in the middle &ndash; happy about a successful day.",
+    e8_alt:"Verena Kahler with Claudia and Denis Bergemann",
+    e8_cap:"With Claudia and Denis Bergemann from the agency Sprecherdatei.",
+    ev4_kicker:"October / November 2025",
+    ev4_title:"The Synchronstar like marathon",
+    ev4_p1:"In October and November 2025 my voice-over agency &ldquo;Synchronstar&rdquo; put up donation money online for two social projects: one for animal welfare and one for organisations and projects that support people.",
+    ev4_p2:"You could apply with your favourite project and collect likes on Instagram &ndash; the project with the most likes at the end won the donation. That started a like marathon over several days, alongside many other great projects.",
+    ev4_p3:"Thanks to my wonderful supporters and the generous donation from &ldquo;Synchronstar&rdquo;, I won the 2,000&nbsp;euros for &ldquo;Binti Tanzania&rdquo;.",
+    ev4_quote:"Once again, heartfelt thanks to everyone near and far who liked my heart project.",
+    m_alt:"Result of the Synchronstar donation marathon: 2,000 euros for AfriCraft",
+    m_cap:"The result: 2,000&nbsp;euros each went to AfriCraft and to Erfurter Tauben e.&nbsp;V. Graphic: Synchronstar",
+    fact_title:"AfriCraft e.&nbsp;V.",
+    fact_text:"Entered in the register of associations at the Charlottenburg district court on 10&nbsp;April 2025. Recognition as a charitable organisation is currently under review.",
+    back:"&larr; Back to the ambassadors",
+  },
+  sw:{
+    meta_title:"Verena Kahler, Balozi Ujerumani | Mradi wa Binti",
+    meta_desc:"Verena Kahler ni balozi wa Mradi wa Binti nchini Ujerumani tangu 2023. Kwa bangili ya elimu anagharamia vifurushi vya Binti kwa wanafunzi wa kike nchini Tanzania.",
+    aria_lang:"Lugha",
+    nav_back:"&larr; Mabalozi",
+    footer_home:"Kwenye ukurasa mkuu",
+    alt_portrait:"Verena Kahler, balozi wa Mradi wa Binti nchini Ujerumani",
+    flag:"&#127465;&#127466; Ujerumani",
+    role:"Balozi &middot; tangu 2023",
+    intro:"Verena Kahler ni balozi wa Mradi wa Binti nchini Ujerumani tangu 2023. Anakusanya michango, anaandaa usomaji wa vitabu na jioni za hisani, na anaufikisha mradi kwa umma wa Ujerumani &ndash; kuanzia sherehe ya bustani yake hadi mazungumzo na Rais wa Ujerumani.",
+    donate:"Changia sasa",
+    band_slogan:"Bangili kwa ajili ya elimu",
+    band_text:"Jijini Dar es Salaam, Peter Makesi hutengeneza bangili zetu za Binti kwa mkono &ndash; kwa mbegu bora za msandali, shanga kwa shanga. Nchini Ujerumani kila bangili huwa mchango wa kifurushi cha Binti: bangili moja mkononi, msichana mmoja zaidi anayeweza kwenda shule wakati wa hedhi yake. Verena hutoa bangili ya Binti kwa kila mchango wa euro 15 au zaidi.",
+    b1_alt:"Peter Makesi akitengeneza bangili za Binti kwa mbegu za msandali jijini Dar es Salaam",
+    b1_cap:"Peter Makesi hutengeneza bangili zetu za Binti kwa mkono jijini Dar es Salaam &ndash; kwa mbegu bora za msandali.",
+    b2_alt:"Bangili za Binti zilizowasili karibu na bango la Karibu",
+    b2_cap:"Ahsante sana &ndash; mzigo mpya wa bangili za Binti kutoka Tanzania.",
+    b3_alt:"Mikono ya rangi mbalimbali, yote ikiwa na bangili nyekundu ya Binti",
+    b3_cap:"Bangili moja huunganisha &ndash; kuvuka nchi na mabara.",
+    b4_alt:"Bangili za Binti zikiwa zimepangwa kama moyo kwenye daraja la mbao kando ya maji",
+    b4_cap:"Kila bangili inawakilisha sehemu ya elimu.",
+    ev1_kicker:"Tamasha la Muungano wa Uzalishaji &middot; Berlin",
+    ev1_title:"Binti kwa Rais wa Ujerumani",
+    ev1_quote:"&ldquo;Nilipata fursa ya ajabu ya kumtambulisha Rais wetu Frank-Walter Steinmeier mradi wa moyo wangu &lsquo;Binti Tanzania&rsquo;.&rdquo;",
+    ev1_p:"Nashukuru kwa dhati kwa mazungumzo yenye shauku na ya kirafiki sana.",
+    s3_alt:"Verena Kahler pamoja na Rais Frank-Walter Steinmeier",
+    s3_cap:"Pamoja na Rais Frank-Walter Steinmeier katika Tamasha la Muungano wa Uzalishaji jijini Berlin.",
+    s1_alt:"Rais Steinmeier akitazama bangili ya Binti mkononi mwake",
+    s1_cap:"Bangili ya Binti mkononi mwa Rais.",
+    s2_alt:"Verena Kahler akimwonyesha Rais bangili ya Binti",
+    s2_cap:"Bangili moja inaeleza mradi haraka kuliko kijitabu chochote.",
+    s4_alt:"Verena Kahler akizungumza na Rais",
+    s4_cap:"Mazungumzo yenye shauku na ya kirafiki sana.",
+    events_title:"Matukio",
+    events_muted:"Yanayofanyika kwa ajili ya Binti nchini Ujerumani &ndash; kwa mpangilio.",
+    ev2_kicker:"Agosti 2024",
+    ev2_title:"Usomaji wa hisani katika Fliegendes Theater",
+    ev2_p:"Usomaji wetu wa hisani katika Fliegendes Theater &ndash; pamoja na Edelgard Hansen wa ajabu na &ldquo;Eric mbwa&rdquo;.",
+    l1_alt:"Edelgard Hansen na Verena Kahler wakifanya mazoezi ya usomaji wa hisani",
+    l1_cap:"Mazoezi ya usomaji: Edelgard Hansen na Verena Kahler &ndash; pamoja na &ldquo;Eric mbwa&rdquo;.",
+    l2_alt:"Edelgard Hansen na Verena Kahler kwenye mazoezi ya usomaji wa hisani",
+    l2_cap:"Kutoka kwenye mazoezi ya usomaji wa hisani.",
+    l3_alt:"Edelgard Hansen na Verena Kahler wakiwa na vitabu vilivyofunguliwa",
+    l3_cap:"Usomaji ulifanyika kwa manufaa ya Binti Tanzania.",
+    ev3_kicker:"Agosti 2025",
+    ev3_title:"Binti Charity Party",
+    ev3_p1:"Mnamo Agosti 2025 niliwakaribisha watu wengi wa ajabu kwenye &ldquo;Binti Charity Party&rdquo; yangu: marafiki, wafanyakazi wenzangu, wanaonifahamu wa zamani &ndash; na watu wengi wapya.",
+    ev3_p2:"Vivutio vya kitamaduni vilikuwa wasanii mahiri waliotumbuiza wote bila malipo: Una Gonschor, Robby Edwards, Susanna Bartilla, Hugo Fernandez na Charles Wynn. Pia wasanii maarufu wa sanaa za kuona walitoa kazi zao kwa mnada wa hisani, miongoni mwao René Cassio Scholz, Ute Manoloudakis, Jasmin Sylla-Bugarin, Juliane Kufferath na &ldquo;art of Léon&rdquo; &ndash; pamoja na CD zilizosainiwa kwa mkono za &ldquo;SpongeBob&rdquo; yaani Santiago Ziesmer.",
+    ev3_p3:"Shukrani kubwa kwa Dietmar Wunder kwa uendeshaji wake wa kuvutia, kwa Joshua Wunder kwa tafsiri bora ya papo kwa papo ya hotuba ya Mkurugenzi Mkuu wa AfriCraft Kelvin Nicholas, na &ndash; kwa mara ya kwanza &ndash; kwa Nisha Wunder kwa uimbaji wake wa kuvutia wa nyimbo za Whitney Houston.",
+    ev3_p4:"Kwa wageni wangu wengi, jioni hiyo ilikuwa mara ya kwanza kulifahamu tatizo hili kubwa.",
+    e1_alt:"Dietmar Wunder akiendesha Binti Charity Party",
+    e1_cap:"Dietmar Wunder &ndash; mwigizaji na sauti ya Kijerumani ya Daniel Craig yaani James Bond &ndash; aliendesha jioni kwa uvutio.",
+    e2_alt:"Dietmar Wunder akiwa na kipaza sauti bustanini",
+    e2_cap:"Wasanii wote walitumbuiza bila malipo kwa manufaa ya &ldquo;Binti Tanzania&rdquo;.",
+    e3_alt:"Kelvin Nicholas, Mkurugenzi Mkuu wa AfriCraft, akizungumza kwenye Binti Charity Party, akitafsiriwa papo kwa papo na Joshua Wunder",
+    e3_cap:"Kelvin Nicholas, Mkurugenzi Mkuu wa AfriCraft, anawaeleza wageni wangu &ldquo;Binti Tanzania&rdquo; ni nini na jina linamaanisha nini &ndash; akitafsiriwa papo kwa papo, na kuongezewa mtindo wake mpya, na Joshua Wunder.",
+    e4_alt:"Susanna Bartilla akiimba, akisindikizwa na Hugo Fernandez kwa gitaa",
+    e4_cap:"Susanna Bartilla, mwimbaji maarufu wa jazz Mjerumani-Mfaransa, akisindikizwa na Hugo Fernandez.",
+    e5_alt:"Una Gonschor pamoja na Robby Edwards kwenye saksofoni",
+    e5_cap:"Una Gonschor &ndash; mwimbaji, mwandishi na mwanzilishi wa chama cha Namu Art for Life &ndash; pamoja na Robby Edwards kwenye saksofoni.",
+    e6_alt:"Charles Wynn akiimba kwenye Binti Charity Party",
+    e6_cap:"Charles Wynn, mwimbaji na mchezaji, aligusa na kufurahisha kila mtu kwa sauti yake ya soul yenye hisia.",
+    e7_alt:"Meinolf Kuper, Verena Kahler na Kelvin Nicholas",
+    e7_cap:"Meinolf Kuper, mwanzilishi wa AfriCraft, na Mkurugenzi Mkuu Kelvin Nicholas nikiwa katikati &ndash; tukifurahia siku iliyofanikiwa.",
+    e8_alt:"Verena Kahler pamoja na Claudia na Denis Bergemann",
+    e8_cap:"Pamoja na Claudia na Denis Bergemann kutoka wakala wa Sprecherdatei.",
+    ev4_kicker:"Oktoba / Novemba 2025",
+    ev4_title:"Marathoni ya &lsquo;like&rsquo; ya Synchronstar",
+    ev4_p1:"Mnamo Oktoba na Novemba 2025 wakala wangu wa sauti &ldquo;Synchronstar&rdquo; uliweka mtandaoni fedha za mchango kwa miradi miwili ya kijamii: mmoja wa ustawi wa wanyama na mmoja wa taasisi na miradi inayowasaidia watu.",
+    ev4_p2:"Mtu angeweza kuomba kwa mradi anaoupenda na kukusanya &lsquo;likes&rsquo; kwenye Instagram &ndash; mradi wenye likes nyingi zaidi mwishoni ulishinda fedha za mchango. Hivyo ilianza marathoni ya likes ya siku kadhaa, pamoja na miradi mingine mingi mizuri.",
+    ev4_p3:"Kupitia wafuasi wangu wa ajabu na mchango wa ukarimu wa &ldquo;Synchronstar&rdquo;, nilishinda euro 2,000 kwa ajili ya &ldquo;Binti Tanzania&rdquo;.",
+    ev4_quote:"Kwa mara nyingine, shukrani za dhati kwa wote walioweka like kwa mradi wa moyo wangu, kutoka karibu na mbali.",
+    m_alt:"Matokeo ya marathoni ya michango ya Synchronstar: euro 2,000 kwa AfriCraft",
+    m_cap:"Matokeo: euro 2,000 kila moja zilienda kwa AfriCraft na kwa Erfurter Tauben e.&nbsp;V. Mchoro: Synchronstar",
+    fact_title:"AfriCraft e.&nbsp;V.",
+    fact_text:"Ilisajiliwa katika rejista ya vyama katika mahakama ya wilaya ya Charlottenburg tarehe 10 Aprili 2025. Utambuzi kama shirika la hisani unafanyiwa tathmini kwa sasa.",
+    back:"&larr; Rudi kwa mabalozi",
+  },
+};
+/* Text inside <a> tags and attributes, by selector (sanitizer-proof). */
+const TEXT_I18N=[['.back-top','nav_back'],['.btn-primary','donate'],['.back','back'],['.footer-home','footer_home']];
+const ATTR_I18N=[['.lang','aria-label','aria_lang'],['.photo img','alt','alt_portrait']];
+</script>
+<script>
+/* [selector, attribute, I18N key] — class/id selectors survive WordPress/Elementor sanitizing. */
+function detectLang(){
+  try{
+    const q=new URLSearchParams(location.search).get('lang'); if(q&&I18N[q]) return q;
+    const s=localStorage.getItem('binti_lang'); if(s&&I18N[s]) return s;
+  }catch(e){}
+  return 'de';
+}
+function applyLang(lang){
+  const d=I18N[lang]; if(!d) return;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-alt'); if(d[k]!==undefined) el.setAttribute('alt',d[k]);
+  });
+  /* Fallback by selector for text inside <a> and for attributes (data-* may be stripped there). */
+  TEXT_I18N.forEach(([sel,key])=>{ if(d[key]!==undefined) document.querySelectorAll(sel).forEach(el=>el.innerHTML=d[key]); });
+  ATTR_I18N.forEach(([sel,attr,key])=>{ if(d[key]!==undefined) document.querySelectorAll(sel).forEach(el=>el.setAttribute(attr,d[key])); });
+  if(d.meta_title) document.title=d.meta_title;
+  const md=document.querySelector('meta[name="description"]'); if(md&&d.meta_desc) md.setAttribute('content',d.meta_desc);
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  try{ localStorage.setItem('binti_lang',lang); }catch(e){}
+  document.querySelectorAll('a[href^="index.html"]').forEach(a=>{
+    const h=a.getAttribute('href').split('#'); const base=h[0].split('?')[0];
+    a.setAttribute('href', base+'?lang='+lang+(h[1]?'#'+h[1]:''));
+  });
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+document.getElementById('y').textContent=new Date().getFullYear();
+applyLang(detectLang());
+</script>
 </body>
 </html>

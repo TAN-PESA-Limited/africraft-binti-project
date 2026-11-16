@@ -31,6 +31,10 @@ header{position:sticky;top:0;z-index:20;background:rgba(251,243,230,.92);backdro
 .brand .mark svg{width:60%}
 .brand small{display:block;font-family:'Space Grotesk';font-size:.62rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
 .nav-right{display:flex;align-items:center;gap:14px}
+.lang{display:flex;background:rgba(255,255,255,.7);border:1px solid var(--line);border-radius:100px;padding:4px;gap:2px;backdrop-filter:blur(6px)}
+.lang button{border:0;background:transparent;font-family:'Space Grotesk';font-weight:600;font-size:.78rem;color:var(--ink);padding:6px 12px;border-radius:100px;cursor:pointer;transition:.18s}
+.lang button.active{background:var(--ink);color:var(--cream)}
+@media(max-width:560px){.back-top{display:none}}
 .back-top{font-weight:600;font-size:.92rem;color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:.5em;font-weight:600;font-size:1rem;padding:13px 26px;border-radius:100px;border:2px solid transparent;cursor:pointer;transition:.22s}
 .btn-primary{background:var(--rust);color:#fff;box-shadow:0 14px 30px -12px rgba(181,70,42,.6)}
@@ -73,7 +77,12 @@ footer a{color:var(--gold)}
       <img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/africraft-logo.avif" alt="AfriCraft Logo" style="height:36px;width:auto;display:block">
     </a>
     <div class="nav-right">
-      <a href="index.html#ambassadors" class="back-top">&larr; Botschafterinnen</a>
+      <div class="lang" role="group" aria-label="Sprache">
+        <button data-lang="en">EN</button>
+        <button data-lang="de" class="active">DE</button>
+        <button data-lang="sw">SW</button>
+      </div>
+      <a href="index.html#ambassadors" class="back-top" data-i18n="nav_back">&larr; Botschafterinnen</a>
     </div>
   </div>
 </header>
@@ -82,28 +91,28 @@ footer a{color:var(--gold)}
 <main>
   <section class="amb-hero">
     <div class="wrap two-col">
-      <div class="photo"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg" alt="Natalie Kuckenburg, Botschafterin USA"></div>
+      <div class="photo"><img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg" data-i18n-alt="alt_portrait" alt="Natalie Kuckenburg, Botschafterin USA"></div>
       <div class="intro">
-        <span class="flag">&#127482;&#127480; USA</span>
+        <span class="flag" data-i18n="flag">&#127482;&#127480; USA</span>
         <h1>Natalie Kuckenburg</h1>
-        <div class="role">Botschafterin &middot; seit 2026</div>
-        <p>Natalie Kuckenburg ist seit 2026 Botschafterin für das Binti-Projekt in den USA. Sie hat die GoFundMe-Kampagne ins Leben gerufen und macht das Projekt in den Vereinigten Staaten bekannt.</p>
-        <a class="btn btn-primary" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener">Jetzt spenden</a>
-        <p class="note">Foto folgt in höherer Auflösung.</p>
+        <div class="role" data-i18n="role">Botschafterin &middot; seit 2026</div>
+        <p data-i18n="intro">Natalie Kuckenburg ist seit 2026 Botschafterin für das Binti-Projekt in den USA. Sie hat die GoFundMe-Kampagne ins Leben gerufen und macht das Projekt in den Vereinigten Staaten bekannt.</p>
+        <a class="btn btn-primary" href="https://www.paypal.com/donate/?business=verein%40africraft.de&currency_code=EUR&item_name=Binti+Project" target="_blank" rel="noopener" data-i18n="donate">Jetzt spenden</a>
+        <p class="note" data-i18n="note">Foto folgt in höherer Auflösung.</p>
       </div>
     </div>
   </section>
 
   <section class="prose">
     <div class="wrap">
-      <h2>Aktuelles aus den USA</h2>
-      <p class="muted">Hier teilt Natalie bald Neuigkeiten, Aktionen und Einblicke. Der Feed folgt.</p>
+      <h2 data-i18n="news_title">Aktuelles aus den USA</h2>
+      <p class="muted" data-i18n="news_muted">Hier teilt Natalie bald Neuigkeiten, Aktionen und Einblicke. Der Feed folgt.</p>
       <div class="feed">
-        <div class="feed-item"><div class="fi-ph"></div><div><b>Beitrag folgt</b><span>Aktuelles von Natalie erscheint hier.</span></div></div>
-        <div class="feed-item"><div class="fi-ph"></div><div><b>Beitrag folgt</b><span>Aktuelles von Natalie erscheint hier.</span></div></div>
-        <div class="feed-item"><div class="fi-ph"></div><div><b>Beitrag folgt</b><span>Aktuelles von Natalie erscheint hier.</span></div></div>
+        <div class="feed-item"><div class="fi-ph"></div><div><b data-i18n="feed_title">Beitrag folgt</b><span data-i18n="feed_text">Aktuelles von Natalie erscheint hier.</span></div></div>
+        <div class="feed-item"><div class="fi-ph"></div><div><b data-i18n="feed_title">Beitrag folgt</b><span data-i18n="feed_text">Aktuelles von Natalie erscheint hier.</span></div></div>
+        <div class="feed-item"><div class="fi-ph"></div><div><b data-i18n="feed_title">Beitrag folgt</b><span data-i18n="feed_text">Aktuelles von Natalie erscheint hier.</span></div></div>
       </div>
-      <a class="back" href="index.html#ambassadors">&larr; Zurück zu den Botschafterinnen</a>
+      <a class="back" href="index.html#ambassadors" data-i18n="back">&larr; Zurück zu den Botschafterinnen</a>
     </div>
   </section>
 </main>
@@ -112,9 +121,103 @@ footer a{color:var(--gold)}
 <footer>
   <div class="wrap">
     <span>&copy; <span id="y"></span> AfriCraft &middot; Binti Project</span>
-    <span><a href="index.html">Zur Hauptseite</a></span>
+    <span><a href="index.html" class="footer-home" data-i18n="footer_home">Zur Hauptseite</a></span>
   </div>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+<script>
+const I18N = {
+  de:{
+    meta_title:"Natalie Kuckenburg, Botschafterin USA | Binti Project",
+    meta_desc:"Natalie Kuckenburg ist seit 2026 Botschafterin für das Binti-Projekt in den USA. Sie hat die GoFundMe-Kampagne gestartet und finanziert mit Bändchen Binti-Sets für Schulmädchen in Tansania.",
+    aria_lang:"Sprache",
+    nav_back:"&larr; Botschafterinnen",
+    footer_home:"Zur Hauptseite",
+    alt_portrait:"Natalie Kuckenburg, Botschafterin USA",
+    flag:"&#127482;&#127480; USA",
+    role:"Botschafterin &middot; seit 2026",
+    intro:"Natalie Kuckenburg ist seit 2026 Botschafterin für das Binti-Projekt in den USA. Sie hat die GoFundMe-Kampagne ins Leben gerufen und macht das Projekt in den Vereinigten Staaten bekannt.",
+    donate:"Jetzt spenden",
+    note:"Foto folgt in höherer Auflösung.",
+    news_title:"Aktuelles aus den USA",
+    news_muted:"Hier teilt Natalie bald Neuigkeiten, Aktionen und Einblicke. Der Feed folgt.",
+    feed_title:"Beitrag folgt",
+    feed_text:"Aktuelles von Natalie erscheint hier.",
+    back:"&larr; Zurück zu den Botschafterinnen",
+  },
+  en:{
+    meta_title:"Natalie Kuckenburg, Ambassador USA | Binti Project",
+    meta_desc:"Natalie Kuckenburg has been the Binti Project's ambassador in the USA since 2026. She started the GoFundMe campaign and funds Binti kits for schoolgirls in Tanzania with bracelets.",
+    aria_lang:"Language",
+    nav_back:"&larr; Ambassadors",
+    footer_home:"To the main page",
+    alt_portrait:"Natalie Kuckenburg, ambassador USA",
+    flag:"&#127482;&#127480; USA",
+    role:"Ambassador &middot; since 2026",
+    intro:"Natalie Kuckenburg has been the Binti Project's ambassador in the USA since 2026. She launched the GoFundMe campaign and is raising awareness for the project across the United States.",
+    donate:"Donate now",
+    note:"A higher-resolution photo is coming soon.",
+    news_title:"News from the USA",
+    news_muted:"Natalie will soon share news, campaigns and insights here. The feed is coming.",
+    feed_title:"Post coming soon",
+    feed_text:"News from Natalie will appear here.",
+    back:"&larr; Back to the ambassadors",
+  },
+  sw:{
+    meta_title:"Natalie Kuckenburg, Balozi Marekani | Mradi wa Binti",
+    meta_desc:"Natalie Kuckenburg ni balozi wa Mradi wa Binti nchini Marekani tangu 2026. Alianzisha kampeni ya GoFundMe na kwa bangili anagharamia vifurushi vya Binti kwa wanafunzi wa kike nchini Tanzania.",
+    aria_lang:"Lugha",
+    nav_back:"&larr; Mabalozi",
+    footer_home:"Kwenye ukurasa mkuu",
+    alt_portrait:"Natalie Kuckenburg, balozi Marekani",
+    flag:"&#127482;&#127480; Marekani",
+    role:"Balozi &middot; tangu 2026",
+    intro:"Natalie Kuckenburg ni balozi wa Mradi wa Binti nchini Marekani tangu 2026. Alianzisha kampeni ya GoFundMe na anautangaza mradi kote Marekani.",
+    donate:"Changia sasa",
+    note:"Picha yenye ubora wa juu zaidi inakuja.",
+    news_title:"Habari kutoka Marekani",
+    news_muted:"Hapa Natalie atashiriki hivi karibuni habari, kampeni na maarifa. Mlisho unakuja.",
+    feed_title:"Chapisho linakuja",
+    feed_text:"Habari kutoka kwa Natalie zitaonekana hapa.",
+    back:"&larr; Rudi kwa mabalozi",
+  },
+};
+/* Text inside <a> tags and attributes, by selector (sanitizer-proof). */
+const TEXT_I18N=[['.back-top','nav_back'],['.btn-primary','donate'],['.back','back'],['.footer-home','footer_home']];
+const ATTR_I18N=[['.lang','aria-label','aria_lang'],['.photo img','alt','alt_portrait']];
+</script>
+<script>
+/* [selector, attribute, I18N key] — class/id selectors survive WordPress/Elementor sanitizing. */
+function detectLang(){
+  try{
+    const q=new URLSearchParams(location.search).get('lang'); if(q&&I18N[q]) return q;
+    const s=localStorage.getItem('binti_lang'); if(s&&I18N[s]) return s;
+  }catch(e){}
+  return 'de';
+}
+function applyLang(lang){
+  const d=I18N[lang]; if(!d) return;
+  document.documentElement.lang=lang;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n'); if(d[k]!==undefined) el.innerHTML=d[k];
+  });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-alt'); if(d[k]!==undefined) el.setAttribute('alt',d[k]);
+  });
+  /* Fallback by selector for text inside <a> and for attributes (data-* may be stripped there). */
+  TEXT_I18N.forEach(([sel,key])=>{ if(d[key]!==undefined) document.querySelectorAll(sel).forEach(el=>el.innerHTML=d[key]); });
+  ATTR_I18N.forEach(([sel,attr,key])=>{ if(d[key]!==undefined) document.querySelectorAll(sel).forEach(el=>el.setAttribute(attr,d[key])); });
+  if(d.meta_title) document.title=d.meta_title;
+  const md=document.querySelector('meta[name="description"]'); if(md&&d.meta_desc) md.setAttribute('content',d.meta_desc);
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
+  try{ localStorage.setItem('binti_lang',lang); }catch(e){}
+  document.querySelectorAll('a[href^="index.html"]').forEach(a=>{
+    const h=a.getAttribute('href').split('#'); const base=h[0].split('?')[0];
+    a.setAttribute('href', base+'?lang='+lang+(h[1]?'#'+h[1]:''));
+  });
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
+document.getElementById('y').textContent=new Date().getFullYear();
+applyLang(detectLang());
+</script>
 </body>
 </html>
