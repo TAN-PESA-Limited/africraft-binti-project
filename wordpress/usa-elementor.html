@@ -52,7 +52,8 @@ header{position:sticky;top:0;left:0;right:0;z-index:100;background:rgba(251,243,
 .profile{padding:clamp(60px,8vw,120px) 0}
 .profile-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
 .profile-photo{border-radius:28px;overflow:hidden;box-shadow:var(--shadow)}
-.profile-photo img{width:100%;height:auto;display:block}
+.profile-photo img,.profile-photo video{width:100%;height:auto;display:block}
+.profile-photo video{aspect-ratio:4/5;object-fit:cover;background:var(--indigo-d)}
 .flag-badge{display:inline-flex;align-items:center;gap:7px;background:var(--white);border:1px solid var(--line);border-radius:100px;padding:6px 16px;font-weight:600;font-size:.84rem;color:var(--ink);margin-bottom:20px;box-shadow:var(--shadow-sm)}
 .profile-role{font-size:.78rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--rust);margin:.8rem 0 1.2rem}
 .profile-bio{font-size:1.05rem;color:var(--ink);max-width:52ch;line-height:1.7}
@@ -145,7 +146,12 @@ footer p,footer span{color:#F5EDD8!important}
 <section class="profile">
   <div class="wrap profile-grid">
     <div class="profile-photo">
-      <img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg" alt="Natalie Kuckenburg, Botschafterin des Binti-Projekts in den USA">
+      <video class="profile-video" muted loop playsinline preload="auto"
+             poster="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg"
+             aria-label="Natalie Kuckenburg, Botschafterin des Binti-Projekts in den USA">
+        <source src="https://tan-pesa-limited.github.io/africraft-binti-project/videos/ambassador-usa.mp4" type="video/mp4">
+        <img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg" alt="Natalie Kuckenburg, Botschafterin des Binti-Projekts in den USA">
+      </video>
     </div>
     <div>
       <div class="flag-badge" data-i18n="flag">🇺🇸 USA</div>
@@ -335,7 +341,7 @@ const TEXT_I18N = [
   ['#openDonateModal','donate_btn'],['.don-copy-btn','copy']
 ];
 const ATTR_I18N = [
-  ['.profile-photo img','alt','alt_photo'],['.don-close','aria-label','aria_close'],['.lang-sw','aria-label','aria_lang']
+  ['.profile-photo img','alt','alt_photo'],['.profile-video','aria-label','alt_photo'],['.don-close','aria-label','aria_close'],['.lang-sw','aria-label','aria_lang']
 ];
 /* Language to start in: ?lang= in the URL (set by the home page links), then the last
    choice saved on this site, then German. */
@@ -372,6 +378,17 @@ function applyLang(lang){
 
 document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
 applyLang(detectLang());
+
+/* Ambassador video: start playing once the page has finished loading; if the file
+   cannot be loaded, show the photo instead. */
+(function(){
+  const v = document.querySelector('.profile-video'); if(!v) return;
+  function fallback(){ const img = v.querySelector('img'); if(img) v.replaceWith(img); }
+  const srcs = v.querySelectorAll('source'); if(srcs.length) srcs[srcs.length-1].addEventListener('error', fallback);
+  v.addEventListener('error', fallback);
+  function start(){ const p = v.play(); if(p && p.catch) p.catch(()=>{}); }
+  if(document.readyState === 'complete') start(); else window.addEventListener('load', start);
+})();
 
 /* Donate modal */
 const donOverlay = document.getElementById('donOverlay');

@@ -379,7 +379,6 @@ footer p,footer span,footer li{color:#F5EDD8!important}
 .modal-close{position:absolute;top:20px;right:20px;background:var(--white);border:1px solid var(--line);width:40px;height:40px;border-radius:50%;font-size:1.3rem;cursor:pointer;color:var(--ink);line-height:1;z-index:2}
 
 .blob-img{width:100%;height:auto;display:block;position:relative;z-index:0;border-radius:inherit}
-video.blob-img{aspect-ratio:4/3;object-fit:cover;background:var(--indigo-d)}
 .about-img{width:100%;height:auto;display:block;position:relative;z-index:0;border-radius:inherit}
 .realkit-fig{max-width:600px;margin:36px auto 0;text-align:center}
 .realkit-fig img{width:100%;border-radius:20px;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff}
@@ -472,12 +471,7 @@ video.blob-img{aspect-ratio:4/3;object-fit:cover;background:var(--indigo-d)}
     <div class="reveal in d2">
       <div class="hero-art">
         <div class="blob">
-          <video class="blob-img hero-video" autoplay muted loop playsinline preload="metadata"
-                 poster="https://tan-pesa-limited.github.io/africraft-binti-project/images/hero.jpg"
-                 aria-label="Schülerinnen in Tansania mit ihren Binti-Sets">
-            <source src="https://tan-pesa-limited.github.io/africraft-binti-project/videos/hero.mp4" type="video/mp4">
-            <img class="blob-img" src="https://tan-pesa-limited.github.io/africraft-binti-project/images/hero.jpg" alt="Schülerinnen in Tansania mit ihren Binti-Sets">
-          </video>
+          <img class="blob-img hero-img" src="https://tan-pesa-limited.github.io/africraft-binti-project/images/hero.jpg" alt="Schülerinnen in Tansania mit ihren Binti-Sets">
           <div class="blob-pattern"></div>
         </div>
         <div class="hero-float f1"><span class="n">100%</span><span class="t" data-i18n="hero_float1">reusable &amp; sustainable</span></div>
@@ -1130,8 +1124,7 @@ let currentLang='en', kitRevealed=0;
 /* [selector, attribute, I18N key] — selectors (not data-* attributes) so WordPress/Elementor
    sanitizing cannot break them. */
 const ATTR_I18N=[
-  ['.hero-video','aria-label','alt_hero'],
-  ['.hero-video img','alt','alt_hero'],
+  ['.hero-img','alt','alt_hero'],
   ['.realkit-fig img','alt','alt_realkit'],
   ['.photo-band img','alt','alt_impact'],
   ['.about-img','alt','alt_about'],
@@ -1478,19 +1471,6 @@ document.getElementById('year').textContent=new Date().getFullYear();
     m.addEventListener('touchstart',(e)=>{ if(tip.hidden||tip.dataset.c!==c){ e.preventDefault(); show(); tip.dataset.c=c; } else if(href){ location.href=href; } },{passive:false});
   });
   document.addEventListener('click',(e)=>{ if(!wm.contains(e.target)) tip.hidden=true; });
-})();
-
-/* Hero video: if the video file cannot be loaded, show the poster image instead. */
-(function(){
-  const v=document.querySelector('.hero-video'); if(!v) return;
-  const srcs=v.querySelectorAll('source'); const last=srcs[srcs.length-1];
-  function fallback(){
-    const img=v.querySelector('img'); if(!img) return;
-    img.className='blob-img'; v.replaceWith(img);
-  }
-  if(last) last.addEventListener('error',fallback);
-  v.addEventListener('error',fallback);
-  const p=v.play&&v.play(); if(p&&p.catch) p.catch(()=>{});
 })();
 
 /* Init */
