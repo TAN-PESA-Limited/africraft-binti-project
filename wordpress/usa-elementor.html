@@ -146,9 +146,7 @@ footer p,footer span{color:#F5EDD8!important}
 <section class="profile">
   <div class="wrap profile-grid">
     <div class="profile-photo">
-      <video class="profile-video" muted loop playsinline preload="auto"
-             poster="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg"
-             aria-label="Natalie Kuckenburg, Botschafterin des Binti-Projekts in den USA">
+      <video class="profile-video" autoplay muted loop playsinline preload="auto" poster="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg">
         <source src="https://africraft.de/wp-content/uploads/2026/11/Im-so-happy-to-share-that-Im-now-a-proud-ambassador-for-the-Binti-Project.-%E2%9D%A4The-Binti-Project.mp4" type="video/mp4">
         <img src="https://tan-pesa-limited.github.io/africraft-binti-project/images/ambassador-usa.jpg" alt="Natalie Kuckenburg, Botschafterin des Binti-Projekts in den USA">
       </video>
@@ -379,15 +377,23 @@ function applyLang(lang){
 document.querySelectorAll('.lang-btn').forEach(b=>b.addEventListener('click',()=>applyLang(b.dataset.lang)));
 applyLang(detectLang());
 
-/* Ambassador video: start playing once the page has finished loading; if the file
-   cannot be loaded, show the photo instead. */
+/* Ambassador video: the autoplay/muted/loop/playsinline attributes on the tag do the work.
+   This script is only a backup: it (re)starts playback after load, when the video becomes
+   playable, and on the first touch/scroll/click if a browser still blocked autoplay.
+   If the file cannot be loaded at all, the photo is shown instead. */
 (function(){
   const v = document.querySelector('.profile-video'); if(!v) return;
   function fallback(){ const img = v.querySelector('img'); if(img) v.replaceWith(img); }
   const srcs = v.querySelectorAll('source'); if(srcs.length) srcs[srcs.length-1].addEventListener('error', fallback);
   v.addEventListener('error', fallback);
-  function start(){ const p = v.play(); if(p && p.catch) p.catch(()=>{}); }
+  function start(){
+    if(!v.paused) return;
+    v.muted = true; v.defaultMuted = true;
+    const p = v.play(); if(p && p.catch) p.catch(()=>{});
+  }
   if(document.readyState === 'complete') start(); else window.addEventListener('load', start);
+  v.addEventListener('canplay', start);
+  ['touchstart','scroll','click','keydown'].forEach(ev=>document.addEventListener(ev, start, {once:true, passive:true}));
 })();
 
 /* Donate modal */
