@@ -379,6 +379,7 @@ footer p,footer span,footer li{color:#F5EDD8!important}
 .modal-close{position:absolute;top:20px;right:20px;background:var(--white);border:1px solid var(--line);width:40px;height:40px;border-radius:50%;font-size:1.3rem;cursor:pointer;color:var(--ink);line-height:1;z-index:2}
 
 .blob-img{width:100%;height:auto;display:block;position:relative;z-index:0;border-radius:inherit}
+video.blob-img{aspect-ratio:4/3;object-fit:cover;background:var(--indigo-d)}
 .about-img{width:100%;height:auto;display:block;position:relative;z-index:0;border-radius:inherit}
 .realkit-fig{max-width:600px;margin:36px auto 0;text-align:center}
 .realkit-fig img{width:100%;border-radius:20px;box-shadow:var(--shadow);border:1px solid var(--line);background:#fff}
@@ -471,7 +472,12 @@ footer p,footer span,footer li{color:#F5EDD8!important}
     <div class="reveal in d2">
       <div class="hero-art">
         <div class="blob">
-          <img class="blob-img" src="https://tan-pesa-limited.github.io/africraft-binti-project/images/hero.jpg" alt="Schülerinnen in Tansania mit ihren Binti-Sets">
+          <video class="blob-img hero-video" autoplay muted loop playsinline preload="metadata"
+                 poster="https://tan-pesa-limited.github.io/africraft-binti-project/images/hero.jpg"
+                 aria-label="Schülerinnen in Tansania mit ihren Binti-Sets">
+            <source src="https://tan-pesa-limited.github.io/africraft-binti-project/videos/hero.mp4" type="video/mp4">
+            <img class="blob-img" src="https://tan-pesa-limited.github.io/africraft-binti-project/images/hero.jpg" alt="Schülerinnen in Tansania mit ihren Binti-Sets">
+          </video>
           <div class="blob-pattern"></div>
         </div>
         <div class="hero-float f1"><span class="n">100%</span><span class="t" data-i18n="hero_float1">reusable &amp; sustainable</span></div>
@@ -479,7 +485,7 @@ footer p,footer span,footer li{color:#F5EDD8!important}
       </div>
     </div>
   </div>
-  <a href="#problem" class="scroll-cue"><span data-i18n="scroll">Scroll</span><i></i></a>
+  <a href="#problem" class="scroll-cue"><span class="scroll-label" data-i18n="scroll">Scroll</span><i></i></a>
 </section>
 
 <div class="beadband"></div>
@@ -852,6 +858,14 @@ const I18N = {
     hero_chip1:"usable",hero_chip2_pre:"up to ",hero_chip2:"school days saved every month",hero_chip3:"reusable pads in every kit",u_years:" yrs",
     hero_float1:"reusable & sustainable",hero_float2:"education breaks the taboo",
     scroll:"Scroll",
+    meta_title:"Binti Project, Menstrual dignity for schoolgirls in Tanzania | AfriCraft",
+    meta_desc:"The Binti Project provides reusable menstrual hygiene kits and education so girls in Tanzania can stay in school. Support the project with a donation.",
+    alt_hero:"Schoolgirls in Tanzania with their Binti kits",
+    alt_realkit:"A real Binti kit with all its components",
+    alt_impact:"Aneth, Binti coordinator on the ground, hands Binti kits to girls at Mvomero Secondary School",
+    alt_about:"Distribution of Binti kits to schoolgirls in Tanzania",
+    alt_worldmap:"World map: Germany, USA and Tanzania",
+    aria_lang:"Language",aria_menu:"Menu",aria_close:"Close",
     ph_hero:"Photo placeholder, add a picture of the Binti Kit or the girls here",
     ph_about:"Photo placeholder, add a picture of AfriCraft artisans or the workshop",
     proverb_label:"Proverbs from Tanzania",
@@ -903,6 +917,14 @@ const I18N = {
     hero_chip1:"verwendbar",hero_chip2_pre:"bis zu ",hero_chip2:"gerettete Schultage pro Monat",hero_chip3:"Binden pro Set",u_years:" Jahre",
     hero_float1:"wiederverwendbar & nachhaltig",hero_float2:"Aufklärung bricht das Tabu",
     scroll:"Scrollen",
+    meta_title:"Binti Project, Menstruationswürde für Schulmädchen in Tansania | AfriCraft",
+    meta_desc:"Das Binti-Projekt stellt wiederverwendbare Menstruationshygiene-Sets und Aufklärung bereit, damit Mädchen in Tansania weiter zur Schule gehen können. Unterstützen Sie das Projekt mit einer Spende.",
+    alt_hero:"Schülerinnen in Tansania mit ihren Binti-Sets",
+    alt_realkit:"Ein echtes Binti-Kit mit allen Bestandteilen",
+    alt_impact:"Aneth, Binti-Koordinatorin vor Ort, übergibt Binti-Sets an Mädchen der Mvomero Secondary School",
+    alt_about:"Verteilung der Binti-Sets an Schülerinnen in Tansania",
+    alt_worldmap:"Weltkarte: Deutschland, USA und Tansania",
+    aria_lang:"Sprache",aria_menu:"Menü",aria_close:"Schließen",
     ph_hero:"Foto-Platzhalter, hier ein Bild des Binti-Sets oder der Mädchen einfügen",
     ph_about:"Foto-Platzhalter, hier ein Bild der AfriCraft-Handwerker:innen oder der Werkstatt einfügen",
     proverb_label:"Sprichwörter aus Tansania",
@@ -954,6 +976,14 @@ const I18N = {
     hero_chip1:"yanatumika",hero_chip2_pre:"hadi ",hero_chip2:"siku za shule zinazookolewa kila mwezi",hero_chip3:"pedi za kutumika tena kila kifurushi",u_years:" miaka",
     hero_float1:"ya kutumika tena & endelevu",hero_float2:"elimu huvunja mwiko",
     scroll:"Teremsha",
+    meta_title:"Mradi wa Binti, Heshima ya hedhi kwa wanafunzi wa kike Tanzania | AfriCraft",
+    meta_desc:"Mradi wa Binti hutoa vifurushi vya usafi wa hedhi vinavyotumika tena pamoja na elimu, ili wasichana nchini Tanzania waendelee kusoma. Unga mkono mradi kwa mchango.",
+    alt_hero:"Wanafunzi wa kike nchini Tanzania wakiwa na vifurushi vyao vya Binti",
+    alt_realkit:"Kifurushi halisi cha Binti chenye vitu vyote",
+    alt_impact:"Aneth, mratibu wa Binti, akikabidhi vifurushi vya Binti kwa wasichana wa Shule ya Sekondari ya Mvomero",
+    alt_about:"Ugawaji wa vifurushi vya Binti kwa wanafunzi wa kike nchini Tanzania",
+    alt_worldmap:"Ramani ya dunia: Ujerumani, Marekani na Tanzania",
+    aria_lang:"Lugha",aria_menu:"Menyu",aria_close:"Funga",
     ph_hero:"Nafasi ya picha, weka picha ya Kifurushi cha Binti au wasichana hapa",
     ph_about:"Nafasi ya picha, weka picha ya mafundi wa AfriCraft au karakana",
     proverb_label:"Methali kutoka Tanzania",
@@ -1097,6 +1127,28 @@ const LEGAL = {
    ============================================================ */
 let currentLang='en', kitRevealed=0;
 
+/* [selector, attribute, I18N key] — selectors (not data-* attributes) so WordPress/Elementor
+   sanitizing cannot break them. */
+const ATTR_I18N=[
+  ['.hero-video','aria-label','alt_hero'],
+  ['.hero-video img','alt','alt_hero'],
+  ['.realkit-fig img','alt','alt_realkit'],
+  ['.photo-band img','alt','alt_impact'],
+  ['.about-img','alt','alt_about'],
+  ['.wm-svg','aria-label','alt_worldmap'],
+  ['.lang','aria-label','aria_lang'],
+  ['.menu-toggle','aria-label','aria_menu'],
+  ['.modal-close','aria-label','aria_close']
+];
+/* Language to start in: ?lang= in the URL, then the last choice saved on this site, then German. */
+function detectLang(){
+  try{
+    const q=new URLSearchParams(location.search).get('lang'); if(q&&I18N[q]) return q;
+    const s=localStorage.getItem('binti_lang'); if(s&&I18N[s]) return s;
+  }catch(e){}
+  return 'de';
+}
+
 function applyLang(lang){
   currentLang=lang;
   document.documentElement.lang=lang;
@@ -1123,6 +1175,27 @@ function applyLang(lang){
     }
     if(cards[0]) upd(cards[0],'amb_de_country','amb_de_since','amb_de_text');
     if(cards[1]) upd(cards[1],'amb_usa_country','amb_usa_since','amb_usa_text');
+    /* Hero "Scroll" cue sits inside <a class="scroll-cue">, so its data-i18n can be
+       stripped the same way. Update it by class as well. */
+    const sc=document.querySelector('.scroll-cue .scroll-label')||document.querySelector('.scroll-cue span');
+    if(sc&&d.scroll!==undefined) sc.textContent=d.scroll;
+  })();
+  /* Attributes (alt, aria-label) and the document title / meta description are
+     never covered by data-i18n, so translate them by CSS selector. */
+  (function(){
+    const d=I18N[lang]; if(!d) return;
+    ATTR_I18N.forEach(([sel,attr,key])=>{
+      if(d[key]===undefined) return;
+      document.querySelectorAll(sel).forEach(el=>el.setAttribute(attr,d[key]));
+    });
+    if(d.meta_title) document.title=d.meta_title;
+    const md=document.querySelector('meta[name="description"]');
+    if(md&&d.meta_desc) md.setAttribute('content',d.meta_desc);
+    /* Remember the choice and pass it to the ambassador pages. */
+    try{ localStorage.setItem('binti_lang',lang); }catch(e){}
+    document.querySelectorAll('a.amb-mini').forEach(a=>{
+      try{ const u=new URL(a.getAttribute('href'),location.href); u.searchParams.set('lang',lang); a.setAttribute('href',u.href); }catch(e){}
+    });
   })();
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));
   renderKit(lang); renderFaq(lang);
@@ -1407,8 +1480,21 @@ document.getElementById('year').textContent=new Date().getFullYear();
   document.addEventListener('click',(e)=>{ if(!wm.contains(e.target)) tip.hidden=true; });
 })();
 
+/* Hero video: if the video file cannot be loaded, show the poster image instead. */
+(function(){
+  const v=document.querySelector('.hero-video'); if(!v) return;
+  const srcs=v.querySelectorAll('source'); const last=srcs[srcs.length-1];
+  function fallback(){
+    const img=v.querySelector('img'); if(!img) return;
+    img.className='blob-img'; v.replaceWith(img);
+  }
+  if(last) last.addEventListener('error',fallback);
+  v.addEventListener('error',fallback);
+  const p=v.play&&v.play(); if(p&&p.catch) p.catch(()=>{});
+})();
+
 /* Init */
-applyLang('de');
+applyLang(detectLang());
 </script>
 
 
